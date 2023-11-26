@@ -1,76 +1,48 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnico</title>
-    <link rel="stylesheet" href="Templates/TecnicoC.css">
-    <script src="/TecnicoJ.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Agregar crispy-bootstrap4 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/crispy-bootstrap4@1.0.0/dist/crispy-bootstrap4.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/crispy-bootstrap4@1.0.0/dist/crispy-bootstrap4.min.js"></script>
-</head>
-<body>
-    <div id="logo-button-container">
-        <div class="logo" style="display: flex; align-items: center;">
-            <img src="img/everlink.png" alt="Logo" style="max-width: 100px; max-height: 100px;">
-        </div>
-    </div>
+{% extends 'base.html' %}
 
-    <div class="corner-buttons">
-        <a class="corner-button" href="notificaciones.html">&#128276;</a>
-        <a class="corner-button" href="mensajes.html">&#9993;</a>
-        <a class="corner-button" href="perfil.html">&#128100;</a>
-        <div class="btn-group">
-            <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                &#9660;
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="perfil.html">Perfil</a>
-                <a class="dropdown-item" href="configuracion.html">Configuración</a>
-                <a class="dropdown-item" href="#">Cerrar sesión</a>
-            </div>
-        </div>
-    </div>
+{% load static %}
 
-    <nav>
-        <a href="#inicio">Pagina principal</a>
-    </nav>
+{% block title %}Pagina Principal Técnico{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/pagina_principal_tecnico.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% include "partials/navbar.html" %}
 
     <div class="button-container-wrapper">
-        <section id="inicio">
-            <div class="button-container">
+        <section id="arriba" style="display: flex; justify-content: space-around;">
+            <div class="card">
                 <button onclick="mostrarSolicitudes()">
-                    <img src="img/solicitudes.png" alt="Solicitudes">
-                    Solicitudes
+                    <img src="{% static 'img/solicitudes.png' %}" alt="Solicitudes">
+                    <h3>Solicitudes</h3>
                 </button>
             </div>
-            <div class="button-container">
-                <button onclick="mostrarReparaciones()">
-                    <img src="img/reparaciones.jpg" alt="Reparaciones">
-                    Reparaciones
+            <div class="card">
+                <button href="{% url 'logout' %}">
+                    <img src="{% static 'img/reparaciones.jpg' %}" alt="Reparaciones">
+                    <h3>Reparaciones</h3>
                 </button>
             </div>
         </section>
-        <section id="abajo">
-            <div class="button-container">
+        <section id="abajo" style="display: flex; justify-content: space-around;">
+            <div class="card">
                 <button onclick="mostrarEquipo()">
-                    <img src="img/equipo.jpg" alt="Equipos">
-                    Equipos
+                    <img src="{% static 'img/equipo.jpg' %}" alt="Equipos">
+                    <h3>Equipos</h3>
                 </button>
             </div>
-            <div class="button-container">
+            <div class="card">
                 <button onclick="mostrarComponentes()">
-                    <img src="img/componentes.png" alt="Componentes">
-                    Componentes
+                    <img src="{% static 'img/componentes.png' %}" alt="Componentes">
+                    <h3>Componentes</h3>
                 </button>
             </div>
         </section>
     </div>
-    </script>
-</body>
-</html>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/pagina_principal_tecnico.js' %}"></script>
+{% endblock %}

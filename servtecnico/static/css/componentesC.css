@@ -1,0 +1,137 @@
+/* Agrega tus estilos personalizados aquí */
+.logo {
+    float: left;
+    margin-right: 10px;
+}
+
+nav {
+    clear: both;
+    margin-left: 100px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.corner-buttons {
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.corner-buttons a {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+}
+
+        /* Estilos adicionales */
+        .custom-box {
+            border: 3px solid black;
+            padding: 180px;
+            font-weight: bold;
+            font-size: 0px;
+            margin: 30px;
+            display: flex; /* Utilizando flexbox para alinear horizontalmente */
+            align-items: center; /* Centrar verticalmente */
+        }
+
+        .small-box {
+            width: 200px;
+            margin-right: 20px; /* Espacio entre los cuadros pequeños */
+        }
+
+/* Tus estilos existentes */
+.custom-box {
+    /* Estilos del cuadro existente */
+    border: 2px solid black;
+    padding: 20px; /* Ajusta el padding según necesites */
+    font-weight: bold;
+    font-size: 15px; /* Tamaño del texto "TIPO" */
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el contenido a la izquierda */
+}
+
+.nested-box {
+    /* Estilos del contenedor de los cuadros */
+    margin-top: 10px; /* Espacio entre los cuadros */
+}
+
+.editable-textarea {
+    width: calc(100% - 12px); /* Ajusta el ancho considerando los bordes */
+    height: 60px;
+    padding: 5px;
+    margin-bottom: 5px; /* Espacio entre los cuadros de texto */
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+
+
+/* Estilos para los botones */
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    margin-top: 20px; /* Espacio entre el cuadro y los botones */
+    margin-left: 20px; /* Ajusta este valor según sea necesario */
+}
+
+
+
+.custom-button {
+    background-color: white; /* Fondo blanco */
+    color: black; /* Texto negro */
+    border: 2px solid black; /* Borde negro */
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px; /* Espacio entre botones */
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: #ddd; /* Cambio de color al pasar el ratón */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item {
+    border: 1px solid #ccc;
+    padding: 10%px;
+    margin: 10%px;
+}
+
+/* Estilos para el contenedor de botones */
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
+    margin-top: 50px; /* Espacio superior */
+}
+
+/* Estilos de color para los botones */
+.color-1 {
+    background-color: #FF6347; /* Color 1: Tomate */
+    color: white; /* Texto en color blanco */
+    border-color: #FF6347; /* Borde en color tomate */
+    margin-right: 10px; /* Espacio entre los botones */
+}
+
+.color-2 {
+    background-color: #4169E1; /* Color 2: Azul real */
+    color: white; /* Texto en color blanco */
+    border-color: #4169E1; /* Borde en color azul real */
+}

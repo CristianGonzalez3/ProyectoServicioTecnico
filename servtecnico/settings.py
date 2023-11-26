@@ -140,7 +140,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'inicio'
 LOGOUT_REDIRECT_URL = 'login'
 
-# AUTH_USER_MODEL = 'catalogo.User'
+# AUTH_USER_MODEL = 'reparaciones.User'
 
+
+# Manejo de archivos multimedia
 # MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'servtecnico/media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'reparaciones/media')
