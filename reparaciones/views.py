@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 
+# Autenticación
 def inicio(request):
     query_set = Group.objects.filter(user = request.user)
     for g in query_set:
