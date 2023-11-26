@@ -1,0 +1,77 @@
+{% load static %}
+
+<img src="{% static 'img/everlink.png' %}" alt="Logo" style="max-width: 100px; max-height: 100px;">
+    <nav class="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
+    
+        
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'pagina_principal_tecnico' %}">Servicio Tecnico</a>
+            
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar"
+                aria-controls="navbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a 
+                                class="nav-link {% if request.resolver_match.url_name == 'pagina_principal_tecnico' %}active{% endif %}" 
+                                href="{% url 'pagina_principal_tecnico' %}">Inicio</a>
+                        </li>
+
+                        {% if perms.reparaciones.view_solicitudes %}
+                            <li class="nav-item">
+                                <a 
+                                    class="nav-link {% if request.resolver_match.url_name == 'solicitudes_list' %}active{% endif %}" 
+                                    href="">Solicitudes</a>
+                            </li>
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a 
+                                class="nav-link {% if request.resolver_match.url_name == 'reparacion_list' %}active{% endif %}" 
+                                href="">Reparaciones</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a 
+                                class="nav-link {% if request.resolver_match.url_name == 'equipo' %}active{% endif %}" 
+                                href="">Equipos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a 
+                                class="nav-link {% if request.resolver_match.url_name == 'componente' %}active{% endif %}" 
+                                href="">Componentes</a>
+                        </li>
+
+                        <li class="nav-item dropdown"> 
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                <img src="{% static 'img/perfil.png' %}" alt="{{ user.username }}" height="25px" width="25px">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'logout' %}">Perfil</a>
+                                    <a class="dropdown-item" href="{% url 'logout' %}">Configuración</a>
+                                    <a class="dropdown-item" href="{% url 'logout' %}">Cerrar Sesión</a>
+                                </li>
+                            </ul>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
