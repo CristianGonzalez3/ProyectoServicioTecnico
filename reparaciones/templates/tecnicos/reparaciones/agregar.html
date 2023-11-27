@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar</title>
+    <link rel="stylesheet" href="css/agregarc.css">
+    <script src="js/agregarj.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/crispy-bootstrap4@1.0.0/dist/crispy-bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/crispy-bootstrap4@1.0.0/dist/crispy-bootstrap4.min.js"></script>
+
+</head>
+<body>
+    <div id="logo-button-container">
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="img/everlink.png" alt="Logo" style="max-width: 100px; max-height: 100px;">
+        </div>
+    </div>
+
+    <div class="corner-buttons">
+        <a class="corner-button" href="notificaciones.html">&#128276;</a>
+        <a class="corner-button" href="mensajes.html">&#9993;</a>
+        <a class="corner-button" href="perfil.html">&#128100;</a>
+        <div class="btn-group">
+            <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                &#9660;
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="perfil.html">Perfil</a>
+                <a class="dropdown-item" href="configuracion.html">Configuración</a>
+                <a class="dropdown-item" href="">Cerrar sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <a href="Tecnico.html">Página principal</a>
+        <a href="Reparacioness.html">Reparaciones</a>
+        <a href="#Agregar">Agregar</a>
+    </nav>
+
+    <div id="profile-form">
+        <form id="miFormulario" onsubmit="guardarYRedirigir(); return false;">
+            <label for="equipo">Nombre del Equipo:</label>
+            <input type="text" id="equipo" name="equipo" placeholder="Nombre del Equipo">
+
+            <label for="reporte">Reporte:</label>
+            <input type="text" id="reporte" name="reporte" placeholder="Reporte">
+
+            <label for="fechaReporte">Fecha Reporte:</label>
+            <input type="date" id="fechaReporte" name="fechaReporte">
+
+            <label for="fechaReparacion">Fecha de Reparación:</label>
+            <input type="date" id="fechaReparacion" name="fechaReparacion">
+
+            <label for="descripcionReparacion">Descripción de Reparación:</label>
+            <input type="text" id="descripcionReparacion" name="descripcionReparacion" placeholder="Descripción de Reparación">
+    
+            <!-- Botones adicionales -->
+            <div class="botones">
+                <button type="button" class="btn btn-secondary" onclick="volver()">Volver</button>
+                <button type="button" class="btn btn-primary">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

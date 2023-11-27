@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes</title>
+    <link rel="stylesheet" href="css/informeC.css">
+    
+    <script src="informe.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="logo-button-container">
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="img/everlink.png" alt="Logo" style="max-width: 200px; max-height: 100px;">
+        </div>
+        </div>
+    </div>
+
+<div class="corner-buttons">
+    <a class="corner-button" href="notificaciones.html">&#128276;</a>
+    <a class="corner-button" href="mensajes.html">&#9993;</a>
+    <a class="corner-button" href="perfil.html">&#128100;</a>
+    <div class="btn-group">
+        <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown()">
+            &#9660;
+        </button>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a class="dropdown-item" href="#">Perfil</a>
+            <a class="dropdown-item" href="#">Configuración</a>
+            <a class="dropdown-item" href="#">Cerrar sesión</a>
+        </div>
+    </div>
+</div>
+
+<nav>
+    <a href="Practica.html">Pagina Principal</a>
+    <a href="#Componentes">Informe</a>
+</nav>
+<body>
+    <div class="report-container">
+        <div class="report">
+            <div class="report-title"></div>
+            <img class="report-image" src="img/pdf.jpeg" alt="Informe 1">
+            <button class="download-button">Descargar</button>
+        </div>
+        <div class="report">
+            <div class="report-title"></div>
+            <img class="report-image" src="img/pdf.jpeg" alt="Informe 2">
+            <button class="download-button">Descargar</button>
+        </div>
+        <div class="report">
+            <div class="report-title"></div>
+            <img class="report-image" src="img/pdf.jpeg" alt="Informe 3">
+            <button class="download-button">Descargar</button>
+        </div>
+        <!-- Más informes aquí -->
+    </div>
+
+</body>
+<script src="js/informeJ.js"></script>
+    <div class="button-container">
+        <button onclick="volver()">Volver</button>
+</div>

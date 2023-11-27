@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal Usuario</title>
+    <link rel="stylesheet" href="css/PracticaC.css">
+    <script src="js/Practicaj.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="logo-button-container">
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="img/everlink.png" alt="Logo" style="max-width: 100px; max-height: 100px;">
+        </div>
+    </div>
+
+    <div class="corner-buttons">
+        <a class="corner-button" href="notificaciones.html">&#128276;</a>
+        <a class="corner-button" href="mensajes.html">&#9993;</a>
+        <a class="corner-button" href="perfil.html">&#128100;</a>
+        <div class="btn-group">
+            <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                &#9660;
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="perfil.html">Perfil</a>
+                <a class="dropdown-item" href="configuracion.html">Configuracion</a>
+                <a class="dropdown-item" href="#">Cerrar sesion</a>
+            </div>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#inicio">Pagina principal</a>
+    </nav>
+
+    <div class="button-container-wrapper">
+        <section id="inicio">
+            <div class="button-container">
+                <button onclick="mostrarSolicitud()">
+                    <img src="img/solicitud.png" alt="Solicitud">
+                    Solicitud
+                </button>
+            </div>
+            <div class="button-container">
+                <button onclick="mostrarSeguimiento()">
+                    <img src="img/seguimiento.png" alt="Seguimiento">
+                    Seguimiento
+                </button>
+            </div>
+            <div class="button-container">
+                <button onclick="mostrarInforme()">
+                    <img src="img/informe.jpg" alt="Informe">
+                    Informe
+                </button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

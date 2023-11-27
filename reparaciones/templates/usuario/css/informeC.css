@@ -1,0 +1,104 @@
+.logo {
+    float: left;
+    margin-right: 15px;
+    max-width: 20%;
+}
+nav {
+    clear: both;
+    margin-left: 100px;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+}
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 30px;
+}
+.corner-buttons {
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+.corner-buttons a {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+}
+.small-box {
+    width: 200px;
+    margin-right: 20px; /* Espacio entre los cuadros pequeños */
+}
+.report-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.report {
+    border-bottom: 1px solid #ccc;
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.report-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+.download-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.download-button:hover {
+   
+    background-color: #0056b3;
+}
+#download-all {
+    margin-top: 30px;
+    display: flex;
+    align-content: center;
+}
+#back-button {
+    margin-top: 30px;
+    align-self: flex-end;
+}
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+.button-container button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #007bff; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px; /* Ajusta el espacio entre el botón y otros elementos (si es necesario) */
+}
+.button-container button:after {
+  position:relative;
+  left:20px;
+  margin-left: 10px;
+
+}
+.report-image {
+    max-width: 8%; /* Ajusta el ancho máximo de la imagen al 100% del contenedor */
+    height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+    margin-bottom: 10px; /* Añade un espacio inferior entre la imagen y el botón */
+}
