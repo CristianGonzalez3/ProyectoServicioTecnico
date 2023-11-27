@@ -24,13 +24,14 @@
     <div class="botones">
         <button type="button" class="btn btn-secondary" onclick="volver()">Volver</button>
         <button type="button" class="btn btn-success" onclick="enviarDatos()">Enviar</button>
-        <button type="button" class="btn btn-success" onclick="redirigirAgregar()">Agregar</button>            
+        <a type="button" class="btn btn-success" href="{% url 'reparaciones_agregar' %}">Agregar</a>            
     </div>
     
 {% endblock %}
 
 {% block js %}
     <script src="{% static 'Reparaciones.js' %}"></script>
+<<<<<<< HEAD
 {% endblock %}
 
 
@@ -158,3 +159,6 @@
         </div>
 </body>
 </html> -->
+=======
+{% endblock %}
+>>>>>>> a98cfaaf6f0da5fa51422b0c828239667a4b7be9

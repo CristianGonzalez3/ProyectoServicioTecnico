@@ -12,6 +12,8 @@ def inicio(request):
         else:
             context = {}
             return render(request, 'inicio/pagina_principal_usuario.html', context)
+        
+
 
 @login_required
 def pagina_principal_usuario(request):
@@ -26,10 +28,9 @@ def pagina_principal_tecnico(request):
 def pagina_reparaciones(request):
     context = {}
     return render(request, 'tecnicos/reparaciones/pagina_reparaciones.html', context)
-def componentes(request):
-    context = {}
-    return render(request, 'tecnicos/componentes/componentes.html', context)
-def equipos(request):
-    context = {}
-    return render(request, 'tecnicos/equipos/equipos.html', context)
 
+def reparaciones_agregar(request):
+    context = {}
+    return render(request, 'tecnicos/reparaciones/reparaciones_agregar.html', context)
+
+    

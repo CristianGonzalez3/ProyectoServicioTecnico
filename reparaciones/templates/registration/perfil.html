@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Perfil{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/pagina_principal_tecnico.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% include "partials/navbar.html" %}
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/pagina_principal_tecnico.js' %}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+        Contenedor de la imagen con estilos para moverla a la izquierda
+        <div class="profile-image-container">
+            <img src="img/perfil.jpeg" alt="perfil de usuario" style="max-width: 100px; max-height: 100px;">
+        </div>
+    </div>
+
+    <div id="profile-form">
+        <label for="profilePicture">Foto de Perfil:</label>
+        <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+        <img id="preview" style="max-width: 100%; margin-top: 8px; display: none;">
+        <title>Formulario de Contacto</title>
+    </head>
+    <body> 
+    
+    <form id="formulario">
+        <div class="campo-container">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <button type="button" onclick="agregarCampo('nombre')">Agregar Nombre</button>
+        </div>
+    
+        <div class="campo-container">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+            <button type="button" onclick="agregarCampo('apellido')"> Agregar Apellido</button>
+        </div>
+    
+        <div class="campo-container">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <button type="button" onclick="agregarCampo('telefono')"> Agregar Teléfono</button>
+        </div>
+    
+        <div class="campo-container">
+            <label for="correo">Correo electronico:</label>
+            <input type="email" id="correo" name="correo" required>
+            <button type="button" onclick="agregarCampo('correo electronico')"> Agregar Correo</button>
+        </div>
+    
+        <button type="button" onclick="guardarContacto()">Guardar</button>
+        <button type="button" onclick="volver()">Volver</button>
+    </form>
+    </body>
+</html>
