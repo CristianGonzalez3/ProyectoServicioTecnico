@@ -4,7 +4,7 @@ function mostrarEquipo() {
     
 function mostrarReparaciones() {
     // Puedes redirigir utilizando window.location.href
-    window.location.href = 'Reparacioness.html';
+    window.location.href = 'Reparaciones.html';
 }
 
 function mostrarSolicitudes() {

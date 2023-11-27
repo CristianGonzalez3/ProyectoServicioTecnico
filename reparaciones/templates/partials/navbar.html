@@ -38,7 +38,7 @@
                         <li class="nav-item">
                             <a 
                                 class="nav-link {% if request.resolver_match.url_name == 'reparacion_list' %}active{% endif %}" 
-                                href="">Reparaciones</a>
+                                href="{% url 'pagina_reparaciones' %}">Reparaciones</a>
                         </li>
 
                         <li class="nav-item">
@@ -65,7 +65,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="{% url 'logout' %}">Perfil</a>
+                                    <a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a>
                                     <a class="dropdown-item" href="{% url 'logout' %}">Configuración</a>
                                     <a class="dropdown-item" href="{% url 'logout' %}">Cerrar Sesión</a>
                                 </li>
