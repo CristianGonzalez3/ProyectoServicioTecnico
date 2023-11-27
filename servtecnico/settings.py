@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'servtecnico.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'servicio_tecnico',
         'USER': 'root',
         'PASSWORD': '12345678',
@@ -139,10 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'inicio'
 LOGOUT_REDIRECT_URL = 'login'
-
-# AUTH_USER_MODEL = 'reparaciones.User'
-
-
+  
 # Manejo de archivos multimedia
 # MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'reparaciones/media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'servtecnico/media')
