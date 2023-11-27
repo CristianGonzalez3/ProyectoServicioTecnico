@@ -3,20 +3,34 @@
 {% load static %}
 
 {% block title %}Reparaciones{% endblock %}
-
-
 {% block css %}
-    <!-- <link rel="stylesheet" href="{% static 'css/pagina_principal_tecnico.css' %}"> -->
-{% endblock %}
-
+    <link rel="stylesheet" href="{% static 'css/Reparaciones.css' %}">
+    {% endblock %}
 {% block content %}
     {% include "partials/navbar.html" %}
+    <div class="botones1">
+        <button type="button" class="btn btn-secondary" onclick="eliminar()">Eliminar</button>
+        <button type="button" class="btn btn-success" onclick="modificar()">Modificar</button>
+    </div>
+    </div>
 
+    <div id="gmail">
+        <label for="lastName">Nombre del Usuario:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Nombre del Usuario"> 
+    
+        <label for="lastName">Correo:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Correo">
+    </div>
+    <div class="botones">
+        <button type="button" class="btn btn-secondary" onclick="volver()">Volver</button>
+        <button type="button" class="btn btn-success" onclick="enviarDatos()">Enviar</button>
+        <button type="button" class="btn btn-success" onclick="redirigirAgregar()">Agregar</button>            
+    </div>
     
 {% endblock %}
 
 {% block js %}
-    <!-- <script src="{% static 'js/pagina_principal_tecnico.js' %}"></script> -->
+    <script src="{% static 'Reparaciones.js' %}"></script>
 {% endblock %}
 
 

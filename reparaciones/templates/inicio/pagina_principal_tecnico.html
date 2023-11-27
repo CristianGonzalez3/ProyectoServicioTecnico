@@ -7,7 +7,6 @@
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/pagina_principal_tecnico.css' %}">
 {% endblock %}
-
 {% block content %}
     {% include "partials/navbar.html" %}
 
@@ -20,29 +19,28 @@
                 </button>
             </div>
             <div class="card">
-                <button href="{% url 'logout' %}">
+                <a href="{% url 'pagina_reparaciones' %}" >
                     <img src="{% static 'img/reparaciones.jpg' %}" alt="Reparaciones">
                     <h3>Reparaciones</h3>
-                </button>
-            </div>
+                </a>
+            </div>                    
         </section>
         <section id="abajo" style="display: flex; justify-content: space-around;">
             <div class="card">
-                <button onclick="mostrarEquipo()">
+                <a href="{% url 'equipos' %}">
                     <img src="{% static 'img/equipo.jpg' %}" alt="Equipos">
                     <h3>Equipos</h3>
-                </button>
+                </a>
             </div>
             <div class="card">
-                <button onclick="mostrarComponentes()">
+                <a href="{% url 'componentes' %}">
                     <img src="{% static 'img/componentes.png' %}" alt="Componentes">
                     <h3>Componentes</h3>
-                </button>
+                </a>
             </div>
         </section>
     </div>
 {% endblock %}
-
 {% block js %}
     <script src="{% static 'js/pagina_principal_tecnico.js' %}"></script>
 {% endblock %}

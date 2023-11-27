@@ -22,4 +22,14 @@ def pagina_principal_usuario(request):
 def pagina_principal_tecnico(request):
     context = {}
     return render(request, 'inicio/pagina_principal_tecnico.html', context)
-    
+
+def pagina_reparaciones(request):
+    context = {}
+    return render(request, 'tecnicos/reparaciones/pagina_reparaciones.html', context)
+def componentes(request):
+    context = {}
+    return render(request, 'tecnicos/componentes/componentes.html', context)
+def equipos(request):
+    context = {}
+    return render(request, 'tecnicos/equipos/equipos.html', context)
+

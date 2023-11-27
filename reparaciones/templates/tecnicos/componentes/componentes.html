@@ -1,63 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Componentes</title>
-    <link rel="stylesheet" href="css/componentesC.css">
-    <script src="js/componentesJ.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-    <div id="logo-button-container">
-        <div class="logo" style="display: flex; align-items: center;">
-            <img src="img/everlink.png" alt="Logo" style="max-width: 100px; max-height: 100px;">
-        </div>
-    </div>
+{% extends 'base.html' %}
 
-    <div class="corner-buttons">
-        <a class="corner-button" href="notificaciones.html">&#128276;</a>
-        <a class="corner-button" href="mensajes.html">&#9993;</a>
-        <a class="corner-button" href="perfil.html">&#128100;</a>
-        <div class="btn-group">
-            <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="toggleDropdown()">
-                &#9660;
-            </button>
-            <div class="dropdown-menu" id="dropdownMenu">
-                <a class="dropdown-item" href="perfil.html">Perfil</a>
-                <a class="dropdown-item" href="configuracion.html">Configuración</a>
-                <a class="dropdown-item" href="#">Cerrar sesión</a>
-            </div>
-        </div>
-    </div>
+{% load static %}
 
-    <nav>
-        <a href="Componentes">Pagina Principal</a>
-        <a href="#Componentes">Componentes</a>
-    </nav>
+{% block title %}Componentes{% endblock %}
+{% block content %}
+    {% include "partials/navbar.html" %}
+    <h2 style="font-weight: bold; font-size: 24px; margin-left: 20px;">Agregar Componentes</h2>
+{% endblock %}
 
-    <h2 style="font-weight: bold; font-size: 24px; margin-left: 20px;">Lista de Componentes</h2>
-
-    <!-- Scripts JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-    <div class="container" id="container">
-        <!-- Aquí se agregarán los cuadros -->
-    </div>
-    <div class="button-container">
-        <div class="button-column">
-            <button class="custom-button color-1" onclick="agregarCuadro()">Agregar</button>
-            <button class="custom-button color-2" onclick="eliminarCuadro()">Eliminar Cuadro</button>
-        </div>
-        <input type="text" id="inputEliminar" placeholder="ID a eliminar">
-    </div>
-</body>
-</html>
-<div class="button-container">
-    <button class="custom-button">Volver</button>
-    <button class="custom-button">Pedidos</button>
-    <button class="custom-button">Orden de Compra</button>
-</div>
+{% block js %}
+    <script src="{% static 'componentesNJ.js' %}"></script>
+{% endblock %}
