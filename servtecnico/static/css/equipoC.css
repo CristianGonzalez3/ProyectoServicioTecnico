@@ -1,0 +1,102 @@
+.corner-buttons {
+    position: absolute;
+    top: 10px;
+    right: 120px; /* Ajusta la posición a la derecha */
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.corner-buttons a {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-options {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-options a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-options a:hover {
+    background-color: #f0f0f0;
+}
+
+.logo {
+    float: left;
+    margin-right: 10px;
+}
+
+nav {
+    clear: both;
+    margin-left: 100px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+/* Nuevos estilos para la tabla */
+.container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.table {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    border: 2px solid #ddd; /* Aumenta el grosor del borde */
+    padding: 12px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f5f5f5; /* Cambia el color de fondo */
+}
+
+/* Nuevos estilos para las líneas adicionales */
+.linea {
+    border-top: 2px solid #ddd; /* Aumenta el grosor del borde */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Nuevos estilos para los botones */
+.botones {
+margin-top: 20px;
+text-align: right; /* Change this line to move the buttons to the right */
+}
+
+.botones button {
+margin: 5px;
+background-color: #808080; /* Color gris */
+color: #fff; /* Texto blanco */
+}

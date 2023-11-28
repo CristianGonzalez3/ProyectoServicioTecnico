@@ -1,0 +1,11 @@
+.botones {
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 20px; /* Ajusta este valor según sea necesario */
+}
+
+
+.botones1 {
+    margin-top: 40px; /* Puedes ajustar este valor según sea necesario */
+    margin-right: 100px; /* Ajusta este valor para mover los botones1 a la izquierda */
+}
