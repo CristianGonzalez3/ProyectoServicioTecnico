@@ -1,86 +1,38 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
-    <link rel="stylesheet" href="css/perfilC.css">
-    <script src="js/perfilJ.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-    <div id="logo-button-container">
-        <div class="logo" style="display: flex; align-items: center;">
-            <img src="img/everlink.png" alt="Logo" style="max-width: 100px; max-height: 100px;">
-        </div>
-        <div class="corner-buttons">
-            <a class="corner-button" href="notificaciones.html">&#128276;</a>
-            <a class="corner-button" href="mensajes.html">&#9993;</a>
-            <a class="corner-button" href="perfil.html">&#128100;</a>
-            <div class="btn-group">
-                <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    &#9660;
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Perfil</a>
-                    <a class="dropdown-item" href="#">Configuración</a>
-                    <a class="dropdown-item" href="#">Cerrar sesión</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <nav>
-            <a href="Practica.html">Pagina principal</a>
-            <a href="">Perfil</a>
-        </nav>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Perfil{% endblock %}
+{% block content %}
+    {% include "partials/navbar.html" %}
+    <div class="campo-container">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <button type="button" onclick="agregarCampo('nombre')">Agregar Nombre</button>
     </div>
 
-    <div class="container">
-        <!-- Contenedor de la imagen con estilos para moverla a la izquierda -->
-        <div class="profile-image-container">
-            <img src="img/perfil.jpeg" alt="perfil de usuario" style="max-width: 100px; max-height: 100px;">
-        </div>
+    <div class="campo-container">
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required>
+        <button type="button" onclick="agregarCampo('apellido')"> Agregar Apellido</button>
     </div>
 
-    <div id="profile-form">
-        <label for="profilePicture">Foto de Perfil:</label>
-        <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
-        <img id="preview" style="max-width: 100%; margin-top: 8px; display: none;">
-        <title>Formulario de Contacto</title>
-    </head>
-    <body>
-    
-    <form id="formulario">
-        <div class="campo-container">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            <button type="button" onclick="agregarCampo('nombre')">Agregar Nombre</button>
-        </div>
-    
-        <div class="campo-container">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required>
-            <button type="button" onclick="agregarCampo('apellido')"> Agregar Apellido</button>
-        </div>
-    
-        <div class="campo-container">
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required>
-            <button type="button" onclick="agregarCampo('telefono')"> Agregar Teléfono</button>
-        </div>
-    
-        <div class="campo-container">
-            <label for="correo">Correo electronico:</label>
-            <input type="email" id="correo" name="correo" required>
-            <button type="button" onclick="agregarCampo('correo electronico')"> Agregar Correo</button>
-        </div>
-    
-        <button type="button" onclick="guardarContacto()">Guardar</button>
-        <button type="button" onclick="volver()">Volver</button>
-    </form>
-    </body>
-</html>
+    <div class="campo-container">
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required>
+        <button type="button" onclick="agregarCampo('telefono')"> Agregar Teléfono</button>
+    </div>
+
+    <div class="campo-container">
+        <label for="correo">Correo electronico:</label>
+        <input type="email" id="correo" name="correo" required>
+        <button type="button" onclick="agregarCampo('correo electronico')"> Agregar Correo</button>
+    </div>
+
+    <button type="button" onclick="guardarContacto()">Guardar</button>
+    <button type="button" onclick="volver()">Volver</button>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'perfilJ.js' %}"></script>
+{% endblock %}

@@ -41,4 +41,12 @@ def componentes(request):
     context = {}
     return render(request, 'tecnicos/componentes/componentes.html', context)
 
+def perfil(request):
+    context = {}
+    return render(request, 'tecnicos/perfil.html', context)
+
+def configuracion(request):
+    context = {}
+    return render(request, 'tecnicos/configuracion.html', context)
+
     
