@@ -28,16 +28,16 @@
         </section>
         <section id="abajo" style="display: flex; justify-content: space-around;">
             <div class="card">
-                <button onclick="mostrarEquipo()">
+                <a href="{% url 'equipos' %}">
                     <img src="{% static 'img/equipo.jpg' %}" alt="Equipos">
                     <h3>Equipos</h3>
-                </button>
+                </a>
             </div>
             <div class="card">
-                <button onclick="mostrarComponentes()">
+                <a href="{% url 'componentes' %}">
                     <img src="{% static 'img/componentes.png' %}" alt="Componentes">
                     <h3>Componentes</h3>
-                </button>
+                </a>
             </div>
         </section>
     </div>

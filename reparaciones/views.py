@@ -33,4 +33,12 @@ def reparaciones_agregar(request):
     context = {}
     return render(request, 'tecnicos/reparaciones/reparaciones_agregar.html', context)
 
+def equipos(request):
+    context = {}
+    return render(request, 'tecnicos/equipos/equipos.html', context)
+
+def componentes(request):
+    context = {}
+    return render(request, 'tecnicos/componentes/componentes.html', context)
+
     

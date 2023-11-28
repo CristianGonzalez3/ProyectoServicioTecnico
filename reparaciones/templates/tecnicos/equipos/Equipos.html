@@ -1,94 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipos</title>
-    <link rel="stylesheet" href="css/equipoC.css">
-    <script src="js/Equipoj.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-    <div id="logo-button-container">
-        <div class="logo" style="display: flex; align-items: center;">
-            <img src="img/everlink.png" alt="Logo" style="max-width: 100px; max-height: 100px;">
-        </div>
-    </div>
+{% extends 'base.html' %}
 
-    <div class="corner-buttons">
-        <a class="corner-button" href="notificaciones.html">&#128276;</a>
-        <a class="corner-button" href="mensajes.html">&#9993;</a>
-        <a class="corner-button" href="perfil.html">&#128100;</a>
-        <div class="btn-group">
-            <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                &#9660;
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="perfil.html">Perfil</a>
-                <a class="dropdown-item" href="configuracion.html">Configuracion</a>
-                <a class="dropdown-item" href="#">Cerrar sesion</a>
-            </div>
-        </div>
-    </div>
+{% load static %}
 
-    <nav>
-        <a href="Tecnico.html">Pagina principal</a>
-        <a href="#Equipo">Equipos</a>
-    </nav>
-    <div class="container mt-4">
-        <h2>Tabla de Datos</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Fecha de Antigüedad</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Aquí puedes insertar filas con datos -->
-                <tr>
-                    <td>1</td>
-                    <td>Ejemplo</td>
-                    <td>Descripción de ejemplo</td>
-                    <td>2023-11-13</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Otro Ejemplo</td>
-                    <td>Otra descripción</td>
-                    <td>2023-11-14</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Tercer Ejemplo</td>
-                    <td>Descripción adicional</td>
-                    <td>2023-11-15</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Juan</td>
-                    <td>Descripción adicional</td>
-                    <td>2023-11-16</td>
-                </tr>
-                <!-- Puedes agregar más filas según tus necesidades -->
-            </tbody>
-        </table>
-        
-        <!-- Líneas adicionales -->
-        <div class="linea"></div>
-        <div class="linea"></div>
+{% block title %}Componentes{% endblock %}
+{% block content %}
+    {% include "partials/navbar.html" %}
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Fecha de Antigüedad</th>
+    </tr>
+{% endblock %}
 
-        <!-- Botones adicionales -->
-        <div class="botones">
-            <button type="button" class="btn btn-primary">Orden de Compra</button>
-            <button type="button" class="btn btn-success" onclick="redirigirAgregar()">Agregar</button>
-            <button type="button" class="btn btn-secondary" onclick="volver()">Volver</button>
-        </div>
-    </div>
-</body>
-</html>
+{% block js %}
+    <script src="{% static 'equipos.js' %}"></script>
+{% endblock %}
