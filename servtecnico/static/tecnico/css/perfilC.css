@@ -1,0 +1,23 @@
+.profile-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+}
+
+.profile-section label {
+    margin-right: 10px;
+    align-items: light;
+}
+
+.profile-section input {
+    margin-right: 10px;
+}
+
+.profile-section button {
+    margin-right: 10px;
+}
+
+.botones {
+    margin-top: 20px;
+}

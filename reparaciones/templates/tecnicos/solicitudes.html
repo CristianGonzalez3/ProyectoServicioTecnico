@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Solicitudes{% endblock %}
+{% block content %}
+    {% include "partials/navbar.html" %}
+    <div class="container mt-4">
+        <h2>Listas de solicitudes Entrantes</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de  Usuario</th>
+                    <th>Fecha de Solicitud</th>
+                    <th>Descripción del Problema</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí puedes insertar filas con datos -->
+                <tr>
+                    <td>1</td>
+                    <td>Ejemplo</td>
+                    <td>2023-11-13</td>
+                    <td>Descripción de ejemplo</td>
+                    <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Otro Ejemplo</td>
+                    <td>2023-11-14</td>
+                    <td>Otra descripción</td>
+                    <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Tercer Ejemplo</td>
+                    <td>2023-11-15</td>
+                    <td>Descripción adicional</td>
+                    <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Juan</td>
+                    <td>2023-11-16</td>
+                    <td>Descripción adicional</td>
+                    <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+                </tr>
+                <!-- Puedes agregar más filas según tus necesidades -->
+            </tbody>
+        </table>
+        
+        <h2>Asignar Técnico</h2>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>ID Técnico</th>
+            <th>Nombre del Técnico</th>
+            <th>Estado</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Puedes insertar filas con datos aquí -->
+        <tr>
+            <td>1</td>
+            <td>Técnico 1</td>
+            <td>Activo</td>
+            <td>tecnico1@example.com</td>
+            <td>123-456-7890</td>
+            <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Técnico 2</td>
+            <td>Inactivo</td>
+            <td>tecnico2@example.com</td>
+            <td>987-654-3210</td>
+            <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+        </tr>
+        <!-- Puedes agregar más filas según tus necesidades -->
+    </tbody>
+    </table>
+    
+        <!-- Líneas adicionales -->
+        <div class="linea"></div>
+        <div class="linea"></div>
+    
+        <!-- Botones adicionales -->
+        <div class="botones">
+            <button type="button" class="btn btn-secondary" onclick="volver()">Volver</button>
+            <button type="button" class="btn btn-primary">Cancelar</button>
+            <button type="button" class="btn btn-success">Siguiente</button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'tecnico/js/equipos.js' %}"></script>
+{% endblock %}
+

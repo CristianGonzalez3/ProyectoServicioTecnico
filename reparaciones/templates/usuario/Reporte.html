@@ -1,43 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte</title>
-    <link rel="stylesheet" href="css/reportec.css">
-    <script src="js/reportej.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
-</head>
-<body>
-    <div id="logo-button-container">
+{% extends 'base.html' %}
 
-        <div class="logo" style="display: flex; align-items: center;">
-            <img src="img/everlink.png" alt="Logo" style="max-width: 100px; max-height: 100px;">
-        </div>
-    </div>
-    <div class="corner-buttons">
-        <a class="corner-button" href="notificaciones.html">&#128276;</a>
-        <a class="corner-button" href="mensajes.html">&#9993;</a>
-        <a class="corner-button" href="perfil.html">&#128100;</a>
-        <div class="btn-group">
-            <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                &#9660;
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="perfil.html">Perfil</a>
-                <a class="dropdown-item" href="configuracion.html">Configuración</a>
-                <a class="dropdown-item" href="#">Cerrar sesión</a>
-            </div>
-        </div>
-    </div>
-    <nav>
-        <a href="Practica.html">Pagina Principal</a>
-        <a href="#Reporte">Reporte</a>        
-    </nav>
+{% load static %}
+
+{% block title %}Página Principal Usuario{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'usuario/css/reporte.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% include "usuario/navbarusu.html" %}
     <form action="#" method="post">
         <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha" required>
@@ -53,4 +25,8 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
     </form>
-</html>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'usuario/js/Reporte.js' %}"></script>
+{% endblock %}

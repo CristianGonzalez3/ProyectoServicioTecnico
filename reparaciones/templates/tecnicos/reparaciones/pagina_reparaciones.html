@@ -4,31 +4,89 @@
 
 {% block title %}Reparaciones{% endblock %}
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/Reparaciones.css' %}">
+    <link rel="stylesheet" href="{% static 'tecnico/css/Reparaciones.css' %}">
     {% endblock %}
 {% block content %}
     {% include "partials/navbar.html" %}
-    <div class="botones1">
-        <button type="button" class="btn btn-secondary" onclick="eliminar()">Eliminar</button>
-        <button type="button" class="btn btn-success" onclick="modificar()">Modificar</button>
-    </div>
-    </div>
+    <div class="container mt-4">
+        <h2>Tabla de Datos</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Equipo</th>
+                    <th>Reporte</th>
+                    <th>Fecha Reporte</th>
+                    <th>Fecha Reparacion</th>
+                    <th>Descripcion Reparacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Equipo1</td>
+                    <td>####</td>
+                    <td>2023-11-13</td>
+                    <td>2023-11-16</td>
+                    <td>Detalle de ejemplo</td>
+                    <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Equipo2</td>
+                    <td>#####</td>
+                    <td>2023-11-14</td>
+                    <td>2023-11-17</td>
+                    <td>Otro detalle</td>
+                    <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Equipo3</td>
+                    <td>#####</td>
+                    <td>2023-11-15</td>
+                    <td>2023-11-18</td>
+                    <td>Detalle adicional</td>
+                    <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Equipo4</td>
+                    <td>#####</td>
+                    <td>2023-11-16</td>
+                    <td>2023-11-19</td>
+                    <td>Detalle adicional</td>
+                    <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+                </tr>
+            </tbody>
+        </table>
 
-    <div id="gmail">
-        <label for="lastName">Nombre del Usuario:</label>
-        <input type="text" id="lastName" name="lastName" placeholder="Nombre del Usuario"> 
-    
-        <label for="lastName">Correo:</label>
-        <input type="text" id="lastName" name="lastName" placeholder="Correo">
-    </div>
-    <div class="botones">
-        <button type="button" class="btn btn-secondary" onclick="volver()">Volver</button>
-        <button type="button" class="btn btn-success" onclick="enviarDatos()">Enviar</button>
-        <a type="button" class="btn btn-success" href="{% url 'reparaciones_agregar' %}">Agregar</a>            
-    </div>
+        <div class="linea"></div>
+        <div class="linea"></div>
+
+        <div class="botones1">
+            <button type="button" class="btn btn-secondary" onclick="eliminar()">Eliminar</button>
+            <button type="button" class="btn btn-success" onclick="modificar()">Modificar</button>
+            <a type="button" class="btn btn-success" href="{% url 'reparaciones_agregar' %}">Agregar</a>            
+
+        </div>
+        </div>
+
+        <div id="gmail">
+            <label for="lastName">Nombre del Usuario:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Nombre del Usuario"> 
+        
+            <label for="lastName">Correo:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Correo">
+        </div>
+        <div class="botones">
+            <button type="button" class="btn btn-secondary" onclick="volver()">Volver</button>
+            <button type="button" class="btn btn-success" onclick="enviarDatos()">Enviar</button>
+        </div>
     
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'Reparaciones.js' %}"></script>
-{% endblock %}
+    <script src="{% static 'tecnico/js/Reparaciones.js' %}"></script>
+{% endblock %}                    
+

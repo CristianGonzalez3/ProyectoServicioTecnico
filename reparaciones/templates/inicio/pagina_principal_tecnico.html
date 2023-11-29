@@ -5,44 +5,51 @@
 {% block title %}Pagina Principal Técnico{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/pagina_principal_tecnico.css' %}">
+    <link rel="stylesheet" href="{% static 'tecnico/css/pagina_principal_tecnico.css' %}">
 {% endblock %}
 
 {% block content %}
     {% include "partials/navbar.html" %}
-
     <div class="button-container-wrapper">
         <section id="arriba" style="display: flex; justify-content: space-around;">
             <div class="card">
                 <button onclick="mostrarSolicitudes()">
-                    <img src="{% static 'img/solicitudes.png' %}" alt="Solicitudes">
-                    <h3>Solicitudes</h3>
+                    <a href="{% url 'solicitudes' %}">
+                        <img src="{% static 'tecnico/img/solicitudes.png' %}" alt="Solicitudes">
+                        <h3>Solicitudes</h3>
+                    </a>
                 </button>
             </div>
             <div class="card">
-                <a href="{% url 'pagina_reparaciones' %}">
-                    <img src="{% static 'img/reparaciones.jpg' %}" alt="Reparaciones">
-                    <h3>Reparaciones</h3>
-                </a>
+                <button class="btn btn-primary" onclick="mostrarReparaciones()">
+                    <a href="{% url 'pagina_reparaciones' %}">
+                        <img src="{% static 'tecnico/img/reparaciones.jpg' %}" alt="Reparaciones">
+                        <h3>Reparaciones</h3>
+                    </a>
+                </button>
             </div>
         </section>
         <section id="abajo" style="display: flex; justify-content: space-around;">
             <div class="card">
-                <a href="{% url 'equipos' %}">
-                    <img src="{% static 'img/equipo.jpg' %}" alt="Equipos">
-                    <h3>Equipos</h3>
-                </a>
+                <button class="btn btn-primary" onclick="mostrarEquipos()">
+                    <a href="{% url 'equipos' %}">
+                        <img src="{% static 'tecnico/img/equipo.jpg' %}" alt="Equipos">
+                        <h3>Equipos</h3>
+                    </a>
+                </button>
             </div>
             <div class="card">
-                <a href="{% url 'componentes' %}">
-                    <img src="{% static 'img/componentes.png' %}" alt="Componentes">
-                    <h3>Componentes</h3>
-                </a>
+                <button class="btn btn-primary" onclick="mostrarComponentes()">
+                    <a href="{% url 'componentes' %}">
+                        <img src="{% static 'tecnico/img/componentes.png' %}" alt="Componentes">
+                        <h3>Componentes</h3>
+                    </a>
+                </button>
             </div>
         </section>
     </div>
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'js/pagina_principal_tecnico.js' %}"></script>
+    <script src="{% static 'tecnico/js/pagina_principal_tecnico.js' %}"></script>
 {% endblock %}

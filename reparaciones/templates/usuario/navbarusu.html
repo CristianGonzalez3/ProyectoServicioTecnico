@@ -1,11 +1,11 @@
 {% load static %}
 
-<img src="{% static 'tecnico/img/everlink.png' %}" alt="Logo" style="max-width: 100px; max-height: 100px;">
+<img src="{% static 'usuario/img/everlink.png' %}" alt="Logo" style="max-width: 100px; max-height: 100px;">
     <nav class="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
     
         
         <div class="container">
-            <a class="navbar-brand" href="{% url 'pagina_principal_tecnico' %}">Servicio Tecnico</a>
+            <a class="navbar-brand" href="{% url 'pagina_principal_usuario' %}"></a>
             
             <button
                 class="navbar-toggler"
@@ -23,34 +23,28 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a 
-                                class="nav-link {% if request.resolver_match.url_name == 'pagina_principal_tecnico' %}active{% endif %}" 
-                                href="{% url 'pagina_principal_tecnico' %}">Inicio</a>
+                                class="nav-link {% if request.resolver_match.url_name == 'pagina_principal_usuario' %}active{% endif %}" 
+                                href="{% url 'pagina_principal_usuario' %}">Inicio</a>
                         </li>
 
                         {% if perms.reparaciones.view_solicitudes %}
                             <li class="nav-item">
                                 <a 
-                                    class="nav-link {% if request.resolver_match.url_name == 'solicitudes_list' %}active{% endif %}" 
-                                    href="">Solicitudes</a>
+                                    class="nav-link {% if request.resolver_match.url_name == 'solicitudes' %}active{% endif %}" 
+                                    href="{% url 'solicitudd' %}">Solicitudes</a>
                             </li>
                         {% endif %}
 
                         <li class="nav-item">
                             <a 
-                                class="nav-link {% if request.resolver_match.url_name == 'reparacion_list' %}active{% endif %}" 
-                                href="{% url 'pagina_reparaciones' %}">Reparaciones</a>
+                                class="nav-link {% if request.resolver_match.url_name == 'seguimiento' %}active{% endif %}" 
+                                href="{% url 'seguimiento' %}">Seguimiento</a>
                         </li>
 
                         <li class="nav-item">
                             <a 
-                                class="nav-link {% if request.resolver_match.url_name == 'equipo' %}active{% endif %}" 
-                                href="{% url 'equipos' %}">Equipos</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a 
-                                class="nav-link {% if request.resolver_match.url_name == 'componente' %}active{% endif %}" 
-                                href="{% url 'componentes' %}">Componentes</a>
+                                class="nav-link {% if request.resolver_match.url_name == 'informe' %}active{% endif %}" 
+                                href="{% url 'informe' %}">Informe</a>
                         </li>
 
                         <li class="nav-item dropdown"> 
@@ -61,12 +55,12 @@
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                             >
-                                <img src="{% static 'tecnico/img/perfil.png' %}" alt="{{ user.username }}" height="25px" width="25px">
+                                <img src="{% static 'usuario/img/perfil.jpeg' %}" alt="{{ user.username }}" height="25px" width="25px">
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a>
-                                    <a class="dropdown-item" href="{% url 'configuracion' %}">Configuración</a>
+                                    <a class="dropdown-item" href="{% url 'perfilusu' %}">Perfil</a>
+                                    <a class="dropdown-item" href="{% url 'configuracionusu' %}">Configuración</a>
                                     <a class="dropdown-item" href="{% url 'logout' %}">Cerrar Sesión</a>
                                 </li>
                             </ul>

@@ -3,11 +3,8 @@
 {% load static %}
 
 {% block title %}Perfil{% endblock %}
-{% block css %}
-    <link rel="stylesheet" href="{% static 'tecnico/css/perfilC.css' %}">
-{% endblock %}
 {% block content %}
-    {% include "partials/navbar.html" %}
+    {% include "usuario/navbarusu.html" %}
     <div id="profile-form" class="profile-section">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
