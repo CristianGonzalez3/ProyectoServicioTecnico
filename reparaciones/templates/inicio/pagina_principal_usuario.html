@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-    {% include "usuario/navbarusu.html" %}
+    {% include "partials/navbarusu.html" %}
 
     <div class="button-container-wrapper" style="display: flex; justify-content: space-around;">
         <section id="arriba">
@@ -19,9 +19,9 @@
             <div class="card">
                 <div class="card-body">
                     <button class="btn btn-primary" onclick="mostrarSolicitud()">
-                        <a href="{% url 'solicitudd' %}">
+                        <a href="{% url 'solicitud' %}">
                         <img src="{% static 'img/solicitud.png' %}" alt="Solicitud">
-                        <h3>Solicitudes</h3>
+                        <h3>Solicitud</h3>
                         </a>
                     </button>
                 </div>
@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <button class="btn btn-primary" onclick="mostrarSeguimiento()">
                         <a href="{% url 'seguimiento' %}">
-                        <img src="{% static 'img/seguimiento.png' %}" alt="Solicitud">
+                        <img src="{% static 'usuario/img/seguimiento.png' %}" alt="Solicitud">
                         <h3>Seguimiento</h3>
                         </a>
                     </button>

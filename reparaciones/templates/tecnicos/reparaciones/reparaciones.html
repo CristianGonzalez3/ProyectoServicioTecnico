@@ -4,7 +4,7 @@
 
 {% block title %}Reparaciones{% endblock %}
 {% block css %}
-    <link rel="stylesheet" href="{% static 'tecnico/css/Reparaciones.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones.css' %}">
     {% endblock %}
 {% block content %}
     {% include "partials/navbar.html" %}
@@ -65,8 +65,8 @@
         <div class="linea"></div>
 
         <div class="botones1">
-            <button type="button" class="btn btn-secondary" onclick="eliminar()">Eliminar</button>
-            <button type="button" class="btn btn-success" onclick="modificar()">Modificar</button>
+            <a type="button" class="btn btn-secondary" href="{% url 'reparaciones' %}">Eliminar</a>
+            <a class="btn btn-success" href="{% url 'reparaciones_agregar' %}">Modificar</a>
             <a type="button" class="btn btn-success" href="{% url 'reparaciones_agregar' %}">Agregar</a>            
 
         </div>
@@ -80,13 +80,13 @@
             <input type="text" id="lastName" name="lastName" placeholder="Correo">
         </div>
         <div class="botones">
-            <button type="button" class="btn btn-secondary" onclick="volver()">Volver</button>
+            <a type="button" class="btn btn-secondary" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
             <button type="button" class="btn btn-success" onclick="enviarDatos()">Enviar</button>
         </div>
     
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'tecnico/js/Reparaciones.js' %}"></script>
+    <script src="{% static 'js/tecnicos/reparaciones.js' %}"></script>
 {% endblock %}                    
 

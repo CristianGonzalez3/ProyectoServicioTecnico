@@ -5,7 +5,7 @@
 {% block title %}Pagina Principal Técnico{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'tecnico/css/pagina_principal_tecnico.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tecnicos/pagina_principal_tecnico.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -15,15 +15,15 @@
             <div class="card">
                 <button onclick="mostrarSolicitudes()">
                     <a href="{% url 'solicitudes' %}">
-                        <img src="{% static 'tecnico/img/solicitudes.png' %}" alt="Solicitudes">
+                        <img src="{% static 'img/tecnicos/solicitudes.png' %}" alt="Solicitudes">
                         <h3>Solicitudes</h3>
                     </a>
                 </button>
             </div>
             <div class="card">
                 <button class="btn btn-primary" onclick="mostrarReparaciones()">
-                    <a href="{% url 'pagina_reparaciones' %}">
-                        <img src="{% static 'tecnico/img/reparaciones.jpg' %}" alt="Reparaciones">
+                    <a href="{% url 'reparaciones' %}">
+                        <img src="{% static 'img/tecnicos/reparaciones.jpg' %}" alt="Reparaciones">
                         <h3>Reparaciones</h3>
                     </a>
                 </button>
@@ -33,7 +33,7 @@
             <div class="card">
                 <button class="btn btn-primary" onclick="mostrarEquipos()">
                     <a href="{% url 'equipos' %}">
-                        <img src="{% static 'tecnico/img/equipo.jpg' %}" alt="Equipos">
+                        <img src="{% static 'img/tecnicos/equipos.jpg' %}" alt="Equipos">
                         <h3>Equipos</h3>
                     </a>
                 </button>
@@ -41,7 +41,7 @@
             <div class="card">
                 <button class="btn btn-primary" onclick="mostrarComponentes()">
                     <a href="{% url 'componentes' %}">
-                        <img src="{% static 'tecnico/img/componentes.png' %}" alt="Componentes">
+                        <img src="{% static 'img/tecnicos/componentes.png' %}" alt="Componentes">
                         <h3>Componentes</h3>
                     </a>
                 </button>
@@ -51,5 +51,5 @@
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'tecnico/js/pagina_principal_tecnico.js' %}"></script>
+    <script src="{% static 'js/tecnicos/pagina_principal_tecnico.js' %}"></script>
 {% endblock %}

@@ -19,30 +19,48 @@ def inicio(request):
 def pagina_principal_usuario(request):
     context = {}
     return render(request, 'inicio/pagina_principal_usuario.html', context)
-def informe(request):
-    context = {}
-    return render(request, 'usuario/informe.html', context)
-def solicitudd(request):
-    context = {}
-    return render(request, 'usuario/solicitudd.html', context)
-def seguimiento(request):
-    context = {}
-    return render(request, 'usuario/seguimiento.html', context)
+
 def perfilusu(request):
     context = {}
-    return render(request, 'usuario/perfilusu.html', context)
+    return render(request, 'registration/perfilusu.html', context)
+
+
 def configuracionusu(request):
     context = {}
-    return render(request, 'usuario/configuracionusu.html', context)
+    return render(request, 'registration/configuracionusu.html', context)
+
+def solicitud(request):
+    context = {}
+    return render(request, 'usuarios/solicitud/solicitud.html', context)
+
+def reporte(request):
+    context = {}
+    return render(request, 'usuarios/seguimiento/reporte.html', context)
+
+def seguimiento(request):
+    context = {}
+    return render(request, 'usuarios/seguimiento/seguimiento.html', context)
+
+def informe(request):
+    context = {}
+    return render(request, 'usuarios/informe/informe.html', context)
 
 @login_required
 def pagina_principal_tecnico(request):
     context = {}
     return render(request, 'inicio/pagina_principal_tecnico.html', context)
 
-def pagina_reparaciones(request):
+def perfil(request):
     context = {}
-    return render(request, 'tecnicos/reparaciones/pagina_reparaciones.html', context)
+    return render(request, 'registration/perfil.html', context)
+
+def configuracion(request):
+    context = {}
+    return render(request, 'registration/configuracion.html', context)
+
+def reparaciones(request):
+    context = {}
+    return render(request, 'tecnicos/reparaciones/reparaciones.html', context)
 
 def reparaciones_agregar(request):
     context = {}
@@ -50,22 +68,14 @@ def reparaciones_agregar(request):
 
 def equipos(request):
     context = {}
-    return render(request, 'tecnicos/equipos.html', context)
+    return render(request, 'tecnicos/equipos/equipos.html', context)
 
 def componentes(request):
     context = {}
     return render(request, 'tecnicos/componentes.html', context)
 
-def perfil(request):
-    context = {}
-    return render(request, 'tecnicos/perfil.html', context)
-
-def configuracion(request):
-    context = {}
-    return render(request, 'tecnicos/configuracion.html', context)
-
 def solicitudes(request):
     context = {}
-    return render(request, 'tecnicos/solicitudes.html', context)
+    return render(request, 'tecnicos/solicitudes/solicitudes.html', context)
 
     

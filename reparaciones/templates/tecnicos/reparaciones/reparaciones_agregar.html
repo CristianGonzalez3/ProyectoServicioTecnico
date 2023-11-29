@@ -13,22 +13,22 @@
     <div id="profile-form" style="margin-top: 50px;">
         <form id="miFormulario" onsubmit="guardarYRedirigir(); return false;">
             <label for="equipo">Nombre del Equipo:</label>
-            <input type="text" id="equipo" name="equipo" placeholder="Nombre del Equipo">
+            <input type="text" id="equipo" name="equipo" placeholder="Nombre del Equipo"><br>
 
             <label for="reporte">Reporte:</label>
-            <input type="text" id="reporte" name="reporte" placeholder="Reporte">
+            <input type="text" id="reporte" name="reporte" placeholder="Reporte"><br>
 
             <label for="fechaReporte">Fecha Reporte:</label>
-            <input type="date" id="fechaReporte" name="fechaReporte">
+            <input type="date" id="fechaReporte" name="fechaReporte"><br>
 
             <label for="fechaReparacion">Fecha de Reparación:</label>
-            <input type="date" id="fechaReparacion" name="fechaReparacion">
+            <input type="date" id="fechaReparacion" name="fechaReparacion"><br>
 
             <label for="descripcionReparacion">Descripción de Reparación:</label>
-            <input type="text" id="descripcionReparacion" name="descripcionReparacion" placeholder="Descripción de Reparación">
+            <input type="text" id="descripcionReparacion" name="descripcionReparacion" placeholder="Descripción de Reparación"><br>
     
              <div class="botones">
-                <a href="{% url 'pagina_reparaciones' %}" type="button" class="btn btn-secondary">Volver</a>
+                <a href="{% url 'reparaciones' %}" type="button" class="btn btn-secondary">Volver</a>
                 <a href="{% url 'reparaciones_agregar' %}" type="button" class="btn btn-primary">Cancelar</a>
                 <a type="submit" class="btn btn-primary">Guardar</a>
             </div>

@@ -5,12 +5,11 @@
 {% block title %}Página Principal Usuario{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'usuario/css/solicitud.css' %}">
+    <link rel="stylesheet" href="{% static 'usuario/css/reporte.css' %}">
 {% endblock %}
 
 {% block content %}
-    {% include "usuario/navbarusu.html" %}
-
+    {% include "partials/navbarusu.html" %}
     <form action="#" method="post">
         <label for="fecha">Fecha:</label>
         <input type="date" id="fecha" name="fecha" required>
@@ -18,7 +17,7 @@
         <label for="nombreEquipo">Nombre del Equipo:</label>
         <input type="text" id="nombreEquipo" name="nombreEquipo" required>
 
-        <label for="descripcion">Descripción de la Solicitud:</label>
+        <label for="descripcion">Descripción del Reporte:</label>
         <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
 
         <div class="button-container">
@@ -29,5 +28,5 @@
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'usuario/js/solicituddJ.js' %}"></script>
+    <script src="{% static 'usuario/js/Reporte.js' %}"></script>
 {% endblock %}

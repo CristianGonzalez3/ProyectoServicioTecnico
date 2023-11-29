@@ -1,6 +1,6 @@
 {% load static %}
 
-<img src="{% static 'tecnico/img/everlink.png' %}" alt="Logo" style="max-width: 100px; max-height: 100px;">
+<img src="{% static 'img/everlink.png' %}" alt="Logo" style="max-width: 100px; max-height: 100px;">
     <nav class="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
     
         
@@ -31,14 +31,14 @@
                             <li class="nav-item">
                                 <a 
                                     class="nav-link {% if request.resolver_match.url_name == 'solicitudes_list' %}active{% endif %}" 
-                                    href="">Solicitudes</a>
+                                    href="{% url 'solicitudes' %}">Solicitudes</a>
                             </li>
                         {% endif %}
 
                         <li class="nav-item">
                             <a 
                                 class="nav-link {% if request.resolver_match.url_name == 'reparacion_list' %}active{% endif %}" 
-                                href="{% url 'pagina_reparaciones' %}">Reparaciones</a>
+                                href="{% url 'reparaciones' %}">Reparaciones</a>
                         </li>
 
                         <li class="nav-item">
@@ -61,7 +61,7 @@
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                             >
-                                <img src="{% static 'tecnico/img/perfil.png' %}" alt="{{ user.username }}" height="25px" width="25px">
+                                <img src="{% static 'img/tecnicos/perfil.png' %}" alt="{{ user.username }}" height="25px" width="25px">
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
