@@ -5,7 +5,7 @@
 {% block title %}Detalle de Reparaciones{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'tecnico/css/reparaciones_agregar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -14,18 +14,16 @@
       <h1>Detalle de Reparaciones</h1>
       <p><strong>Descripción:</strong> {{ incidentesxequipo.descripcion_reparacion }}</p>
       <p><strong>Fecha de Reparación:</strong> {{ incidentesxequipo.fecha_reparacion }}</p>
-      <p><strong>ID de Incidente:</strong> {{ incidentesxequipo.id_incidente }}</p>
-      <p><strong>ID de Equipo:</strong> {{ incidentesxequipo.id_equipo }}</p>
+      <p><strong>Reporte:</strong> {{ incidentesxequipo.id_incidente }}</p>
+      <p><strong>Detalle de Equipo:</strong> {{ incidentesxequipo.id_equipo }}</p>
     </div>
-    
-
-
-    <div class="botones1">
+    <div >
       <a type="button" class="btn btn-secondary" href="{% url 'incidentesxequipos_list' %}">Volver</a>    
       <a class="btn btn-success" href="{% url 'incidentesxequipos_edit' pk=incidentesxequipo.pk %}">Modificar</a>   
-    </div><br>
-    <div id="gmail">
-      <label for="lastName">Nombre del Usuario:</label>
+    </div>
+    <br>
+    <div class="input">
+      <label for="lastName" >Nombre del Usuario:</label>
       <input type="text" id="lastName" name="lastName" placeholder="Nombre del Usuario"> 
   
       <label for="lastName">Correo:</label>

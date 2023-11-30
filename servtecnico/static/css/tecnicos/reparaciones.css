@@ -9,7 +9,7 @@
 }
 
 .table-row:hover {
-    background-color: #f5f5f5; /* Cambia el color al pasar el ratón para indicar que es interactivo */
+    background-color: #a11717; /* Cambia el color al pasar el ratón para indicar que es interactivo */
 }
 
 .content-full {
@@ -26,21 +26,33 @@
 
   /* Otros estilos para la tabla, si es necesario */
 table {
-    width: 100%;
+    width: 200%;
     border-collapse: collapse;
     /* Otros estilos de la tabla */
 }
-
+/* colores de la tabla*/
 th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    /* Otros estilos de las celdas de la tabla */
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    color: black;
+    font-size:large;
+
 }
 
 .content-preview {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 200px; /* ajusta el ancho máximo según tus necesidades */
+    max-width: 200px;
+}
+.input{
+    text-align: center;
+}
+.botones{
+    text-align: right;
+}
+strong{
+    color: rgb(0, 0, 0);
+    font-style: italic;
 }

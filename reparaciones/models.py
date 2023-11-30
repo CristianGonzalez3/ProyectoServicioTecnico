@@ -150,4 +150,4 @@ class IncidentesXEquipos(models.Model):
         return reverse('incidentexequiInfo', args=[str(self.id)])
 
     def __str__(self):
-        return f'{self.descripcion_reparacion} - {self.fecha_reparacion} - {self.id_incidente} - {self.id_equipo}'
+        return f'{self.id_incidente} - {self.id_equipo} - {self.fecha_reparacion} - {self.descripcion_reparacion}'

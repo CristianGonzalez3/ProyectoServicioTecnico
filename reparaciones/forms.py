@@ -5,4 +5,5 @@ from .models import IncidentesXEquipos
 class IncidentesXEquiposForm(forms.ModelForm):
     class Meta:
         model = IncidentesXEquipos
-        fields = ['descripcion_reparacion', 'fecha_reparacion', 'id_incidente', 'id_equipo']
+        fields = ['id_equipo','id_incidente','fecha_reparacion','descripcion_reparacion']
+        
