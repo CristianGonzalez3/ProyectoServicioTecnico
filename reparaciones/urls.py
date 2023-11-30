@@ -20,4 +20,11 @@ urlpatterns = [
     path('equipos/', views.equipos, name='equipos'),
     path('componentes/', views.componentes, name='componentes'),
     path('solicitudes/', views.solicitudes, name='solicitudes'),
+    
+
+    path('incidentesxequipos/', views.incidentesxequipos_list, name='incidentesxequipos_list'),
+    path('incidentesxequipos/<int:pk>/', views.incidentesxequipos_detail, name='incidentesxequipos_detail'),
+    path('incidentesxequipos/new/', views.incidentesxequipos_new, name='incidentesxequipos_new'),
+    path('incidentesxequipos/<int:pk>/edit/', views.incidentesxequipos_edit, name='incidentesxequipos_edit'),
+    path('eliminar_varios_incidentes/', views.eliminar_varios_incidentes, name='eliminar_varios_incidentes'),
 ]

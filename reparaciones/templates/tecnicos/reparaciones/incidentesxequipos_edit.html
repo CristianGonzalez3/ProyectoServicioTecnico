@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Agregar Reparación{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'tecnico/css/reparaciones_agregar.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% include "partials/navbar.html" %}
+    <br>
+    <h1>Reparaciones</h1>
+  <form method="post" class="incidentesxequipo-form">{% csrf_token %}
+    {{ form.as_p}}
+    <button type="submit">Guardar cambios</button>
+  </form>
+  {% if incidentesxequipo.pk %}
+    <a href="{% url 'incidentesxequipos_detail' pk=incidentesxequipo.pk %}">Cancelar</a>
+  {% else %}
+    <a href="{% url 'incidentesxequipos_list' %}">Cancelar</a>
+  {% endif %}
+  
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'tecnico/js/pagina_principal_tecnico.js' %}"></script>
+{% endblock %}
+

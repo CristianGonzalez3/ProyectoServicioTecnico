@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Reparaciones{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones.css' %}">
+{% endblock %}
+
+
+{% block content %}
+  {% include "partials/navbar.html" %}
+  <div class="container mt-4">
+    <h1>Lista de Reparaciones</h1>
+    <form method="post" action="{% url 'eliminar_varios_incidentes' %}">
+      {% csrf_token %}
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID de Reparación</th>
+              <th>Descripción de Reparación</th>
+              <th>Equipo</th>
+              <th>Reporte</th>
+              <th>Fecha de Reporte</th>
+              <th>Fecha de Reparación</th>
+              <th>Seleccionar</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for incidentesxequipo in incidentesxequipos %}
+              <tr class="table-row">
+                <td>{{ incidentesxequipo.pk }}</td>
+                <td>
+                  <div class="content-preview">{{ incidentesxequipo.descripcion_reparacion|truncatechars:50 }}</div>
+                  <div class="content-full">{{ incidentesxequipo.descripcion_reparacion }}</div>
+                </td>
+                <td>{{ incidentesxequipo.id_equipo }}</td>
+                <td>{{ incidentesxequipo.id_incidente }}</td>
+                <td>{{ incidentesxequipo.fecha_reporte }}</td>
+                <td>{{ incidentesxequipo.fecha_reparacion }}</td>
+                <td>
+                  <input type="checkbox" name="eliminar[]" value="{{ incidentesxequipo.pk }}" class="seleccionar-checkbox" aria-label="Checkbox for following text input">
+                </td>
+                <td>
+                  <a href="{% url 'incidentesxequipos_detail' pk=incidentesxequipo.pk %}">Detalles</a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <div class="linea"></div>
+        <div class="linea"></div>
+      </div><br>
+      <button type="submit" class="btn btn-secondary">Eliminar</button>
+      <a type="button" class="btn btn-success" href="{% url 'incidentesxequipos_new' %}">Agregar</a>
+      
+    </form>
+  </div><br>
+  <div id="gmail">
+    <label for="lastName">Nombre del Usuario:</label>
+    <input type="text" id="lastName" name="lastName" placeholder="Nombre del Usuario"> 
+
+    <label for="lastName">Correo:</label>
+    <input type="text" id="lastName" name="lastName" placeholder="Correo">
+    <button type="button" class="btn btn-success" onclick="enviarDatos()">Enviar</button>
+</div>
+<div class="botones">
+    <a type="button" class="btn btn-secondary" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
+</div>
+
+  <style>
+    .table-container {
+      max-height: 400px; /* ajusta la altura máxima según tus necesidades */
+      overflow-y: auto;
+    }
+
+    .table-row {
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Efecto visual al pasar el ratón */
+    }
+
+    .table-row:hover {
+      background-color: #f5f5f5; /* Cambia el color al pasar el ratón para indicar que es interactivo */
+    }
+
+    .content-full {
+      display: none;
+    }
+
+    .table-row.expanded .content-preview {
+      display: none;
+    }
+
+    .table-row.expanded .content-full {
+      display: block;
+    }
+
+    /* Otros estilos para la tabla, si es necesario */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      /* Otros estilos de la tabla */
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+      /* Otros estilos de las celdas de la tabla */
+    }
+
+    .content-preview {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px; /* ajusta el ancho máximo según tus necesidades */
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var rows = document.querySelectorAll('.table-row');
+
+      rows.forEach(function (row) {
+        row.addEventListener('click', function () {
+          this.classList.toggle('expanded');
+        });
+      });
+    });
+  </script>
+{% endblock %}

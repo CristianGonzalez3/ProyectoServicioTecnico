@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
+from .models import IncidentesXEquipos
+from .forms import IncidentesXEquiposForm
+from django.contrib import messages
 
 # Autenticación
 def inicio(request):
@@ -12,7 +15,7 @@ def inicio(request):
         else:
             context = {}
             return render(request, 'inicio/pagina_principal_usuario.html', context)
-        
+
 
 
 @login_required
@@ -78,4 +81,47 @@ def solicitudes(request):
     context = {}
     return render(request, 'tecnicos/solicitudes/solicitudes.html', context)
 
-    
+
+# En tu archivo reparaciones/views.py
+
+def incidentesxequipos_list(request):
+    incidentesxequipos = IncidentesXEquipos.objects.all()
+    return render(request, 'tecnicos/reparaciones/incidentesxequipos_list.html', {'incidentesxequipos': incidentesxequipos})
+
+def incidentesxequipos_detail(request, pk):
+    incidentesxequipo = get_object_or_404(IncidentesXEquipos, pk=pk)
+    return render(request, 'tecnicos/reparaciones/incidentesxequipos_detail.html', {'incidentesxequipo': incidentesxequipo})
+
+def incidentesxequipos_new(request):
+    if request.method == "POST":
+        form = IncidentesXEquiposForm(request.POST)
+        if form.is_valid():
+            incidentesxequipo = form.save(commit=False)
+            incidentesxequipo.save()
+            return redirect('incidentesxequipos_detail', pk=incidentesxequipo.pk)
+    else:
+        form = IncidentesXEquiposForm()
+    return render(request, 'tecnicos/reparaciones/incidentesxequipos_edit.html', {'form': form})
+
+def incidentesxequipos_edit(request, pk):
+    incidentesxequipo = get_object_or_404(IncidentesXEquipos, pk=pk)
+    if request.method == "POST":
+        form = IncidentesXEquiposForm(request.POST, instance=incidentesxequipo)
+        if form.is_valid():
+            incidentesxequipo = form.save(commit=False)
+            incidentesxequipo.save()
+            return redirect('incidentesxequipos_detail', pk=incidentesxequipo.pk)
+    else:
+        form = IncidentesXEquiposForm(instance=incidentesxequipo)
+    return render(request, 'tecnicos/reparaciones/incidentesxequipos_edit.html', {'form': form})
+
+def eliminar_varios_incidentes(request):
+    if request.method == 'POST':
+        incidentes_a_eliminar = request.POST.getlist('eliminar[]')
+        if incidentes_a_eliminar:
+            IncidentesXEquipos.objects.filter(pk__in=incidentes_a_eliminar).delete()
+            messages.success(request, 'Incidentes eliminados exitosamente.')
+        else:
+            messages.warning(request, 'Selecciona al menos un incidente para eliminar.')
+
+    return redirect('incidentesxequipos_list')

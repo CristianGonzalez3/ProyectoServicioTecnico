@@ -1,0 +1,11 @@
+<!-- En tu archivo templates/reparaciones/incidentesxequipos_form.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Nuevo IncidenteXEquipo</h1>
+  <form method="post" class="incidentesxequipo-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+  <a href="{% url 'incidentesxequipos_list' %}">Cancelar</a>
+{% endblock %}
