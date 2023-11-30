@@ -17,11 +17,10 @@
         <table>
           <thead>
             <tr>
-              <th>ID de Reparación</th>
-              <th>Descripción de Reparación</th>
+              <th>ID</th>
               <th>Equipo</th>
               <th>Reporte</th>
-              <th>Fecha de Reporte</th>
+              <th>Descripción de Reparación</th>
               <th>Fecha de Reparación</th>
               <th>Seleccionar</th>
               <th>Acciones</th>
@@ -31,13 +30,12 @@
             {% for incidentesxequipo in incidentesxequipos %}
               <tr class="table-row">
                 <td>{{ incidentesxequipo.pk }}</td>
+                <td>{{ incidentesxequipo.id_equipo }}</td>
+                <td>{{ incidentesxequipo.id_incidente }}</td>
                 <td>
                   <div class="content-preview">{{ incidentesxequipo.descripcion_reparacion|truncatechars:50 }}</div>
                   <div class="content-full">{{ incidentesxequipo.descripcion_reparacion }}</div>
                 </td>
-                <td>{{ incidentesxequipo.id_equipo }}</td>
-                <td>{{ incidentesxequipo.id_incidente }}</td>
-                <td>{{ incidentesxequipo.fecha_reporte }}</td>
                 <td>{{ incidentesxequipo.fecha_reparacion }}</td>
                 <td>
                   <input type="checkbox" name="eliminar[]" value="{{ incidentesxequipo.pk }}" class="seleccionar-checkbox" aria-label="Checkbox for following text input">

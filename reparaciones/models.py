@@ -83,7 +83,7 @@ class UsuariosXSolicitudes(models.Model):
         return reverse('usuxsolInfo', args=[str(self.id)])
 
     def __str__(self):
-        return f'{self.id_estado_solicitud} - {self.id_solicitud} - {self.id_usuario} - {self.fecha_estado_solicitud}'
+        return f'{self.id_usuario} - {self.fecha_estado_solicitud}'
 
 class Incidente(models.Model):
     id_incidente = models.AutoField(primary_key=True)
@@ -95,7 +95,7 @@ class Incidente(models.Model):
         return reverse('IncidenteInfo', args=[str(self.id)])
 
     def __str__(self):
-        return f'{self.descripcion_incidente} - {self.id_usuarioxsolicitud} - {self.id_tecnicoxestado}'
+        return f'{self.descripcion_incidente} - {self.id_usuarioxsolicitud}'
 
 class Equipo(models.Model):
     id_equipo = models.AutoField(primary_key=True)
