@@ -74,8 +74,17 @@ def componentes(request):
     context = {}
     return render(request, 'tecnicos/componentes/componentes.html', context)
 
+def componentesN(request):
+    context = {}
+    return render(request, 'tecnicos/componentes/componentesN.html', context)
+
+
 def solicitudes(request):
     context = {}
     return render(request, 'tecnicos/solicitudes/solicitudes.html', context)
+
+def asignaciones(request):
+    context = {}
+    return render(request, 'tecnicos/solicitudes/asignaciones.html', context)
 
     

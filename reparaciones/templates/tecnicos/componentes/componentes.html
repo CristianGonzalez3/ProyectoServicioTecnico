@@ -6,22 +6,24 @@
 
 {% block content %}
     {% include "partials/navbar.html" %}
-    <h2 style="font-weight: bold; font-size: 24px; margin-left: 20px;">Agregar Componentes</h2>
+    <h2 style="font-weight: bold; font-size: 24px; margin-left: 20px;">Componentes</h2>
     </div>
     <div class="button-container">
         <div class="button-column">
-            <button class="custom-button color-1" onclick="agregarCuadro()">Agregar</button>
+            <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'componentesN' %}">Agregar</a>
+
             <button class="custom-button color-2" onclick="eliminarCuadro()">Eliminar Cuadro</button>
         </div>
         <input type="text" id="inputEliminar" placeholder="ID a eliminar">
     </div>
     <div class="button-container">
-        <button class="custom-button">Volver</button>
+        <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
         <button class="custom-button">Pedidos</button>
         <button class="custom-button">Orden de Compra</button>
     </div>
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'js/tecnicos/componentes.js' %}"></script>
+    <script src="{% static 'js/tecnicos/componentesN.js' %}"></script>
 {% endblock %}
+<a href="{%url 'tecnicos/componentesN'%}"></a>

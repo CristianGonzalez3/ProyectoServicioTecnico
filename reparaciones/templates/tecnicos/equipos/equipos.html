@@ -5,12 +5,58 @@
 {% block title %}Equipos{% endblock %}
 {% block content %}
     {% include "partials/navbar.html" %}
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Fecha de Antigüedad</th>
-    </tr>
+    <div class="container mt-4">
+        <h2>Tabla de Datos</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Fecha de Antigüedad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí puedes insertar filas con datos -->
+                <tr>
+                    <td>1</td>
+                    <td>Ejemplo</td>
+                    <td>Descripción de ejemplo</td>
+                    <td>2023-11-13</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Otro Ejemplo</td>
+                    <td>Otra descripción</td>
+                    <td>2023-11-14</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Tercer Ejemplo</td>
+                    <td>Descripción adicional</td>
+                    <td>2023-11-15</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Juan</td>
+                    <td>Descripción adicional</td>
+                    <td>2023-11-16</td>
+                </tr>
+                <!-- Puedes agregar más filas según tus necesidades -->
+            </tbody>
+        </table>
+        
+        <!-- Líneas adicionales -->
+        <div class="linea"></div>
+        <div class="linea"></div>
+
+        <!-- Botones adicionales -->
+        <div class="botones">
+            <button type="button" class="btn btn-primary">Orden de Compra</button>
+            <button type="button" class="btn btn-success" onclick="redirigirAgregar()">Agregar</button>
+            <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
+        </div>
+    </div>
 {% endblock %}
 
 {% block js %}

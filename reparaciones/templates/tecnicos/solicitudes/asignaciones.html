@@ -1,49 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asignaciones</title>
-    <link rel="stylesheet" href="css/asignacionesC.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div id="logo-button-container">
+{% extends 'base.html' %}
 
-    <div class="logo" style="display: flex; align-items: center;">
-        <img src="img/everlink.png" alt="Logo" style="max-width: 100px; max-height: 100px;">
-    </div>
-</div>
+{% load static %}
 
-<div class="corner-buttons">
-    <a class="corner-button" href="notificaciones.html">&#128276;</a>
-    <a class="corner-button" href="mensajes.html">&#9993;</a>
-    <a class="corner-button" href="perfil.html">&#128100;</a>
-    <div class="btn-group">
-        <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            &#9660;
-        </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Perfil</a>
-            <a class="dropdown-item" href="#">Configuracion</a>
-            <a class="dropdown-item" href="#">Cerrar sesion</a>
-        </div>
-        
-    </div>
-</div>
+{% block title %}Componentes{% endblock %}
 
-<nav>
-    <a href="">Pagina Principal</a>
-    <a href=''>Solicitudes</a>
-    <a href=''>Asignaciones</a>
-</nav>   
-
-
-
-
-<h6>Solicitudes Asignadas</h6>
-    
-
+{% block content %}
+    {% include "partials/navbar.html" %}
+    <h6>Solicitudes Asignadas</h6>
     <table class="solicitud-table">
         <thead>
           <tr>
@@ -130,10 +93,10 @@
         </tbody>
       </table>
 
-      <button id="miboton">volver</button>
+      <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'solicitudes' %}">Volver</a>
+      
+{% endblock %}
 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% block js %}
+    <script src="{% static 'js/tecnicos/componentesNJ.js' %}"></script>
+{% endblock %}

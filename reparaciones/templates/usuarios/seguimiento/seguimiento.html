@@ -5,7 +5,7 @@
 {% block title %}Página Principal Usuario{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'usuario/css/seguimiento.css' %}">
+    <link rel="stylesheet" href="{% static 'css/usuario/seguimiento.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -15,11 +15,11 @@
             <label for="Ingresar">Ingresar el ID de seguimiento:</label>
             <input type="Ingresar" type="tex" name="Ingresar" >
         </div><br>
-        <button type="submit">Volver</button>
+        <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_usuario' %}">Volver</a>
         <button type="reset">Siguiente</button>
     </form>
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'usuario/js/seguimientoJ.js' %}"></script>
+    <script src="{% static 'js/usuario/seguimientoJ.js' %}"></script>
 {% endblock %}

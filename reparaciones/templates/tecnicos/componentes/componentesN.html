@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}Componentes{% endblock %}
+{% block title %}ComponentesNuevos{% endblock %}
 
 {% block content %}
     {% include "partials/navbar.html" %}
@@ -35,12 +35,12 @@
         </div>
     </div>
     <div class="button-container">
-        <button class="custom-button">Volver</button>
+        <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'componentes' %}">Volver</a>
         <button class="custom-button">Cancelar</button>
         <button class="custom-button">Guardar</button>
     </div>
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'js/tecnicos/componentes.js' %}"></script>
+    <script src="{% static 'js/tecnicos/componentesN.js' %}"></script>
 {% endblock %}
