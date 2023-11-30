@@ -75,11 +75,20 @@ def equipos(request):
 
 def componentes(request):
     context = {}
-    return render(request, 'tecnicos/componentes.html', context)
+    return render(request, 'tecnicos/componentes/componentes.html', context)
+
+def componentesN(request):
+    context = {}
+    return render(request, 'tecnicos/componentes/componentesN.html', context)
+
 
 def solicitudes(request):
     context = {}
     return render(request, 'tecnicos/solicitudes/solicitudes.html', context)
+
+def asignaciones(request):
+    context = {}
+    return render(request, 'tecnicos/solicitudes/asignaciones.html', context)
 
 
 # En tu archivo reparaciones/views.py

@@ -3,21 +3,22 @@
 {% load static %}
 
 {% block title %}Configuración|{% endblock %}
+
 {% block content %}
     {% include "partials/navbarusu.html" %}
     <form>
         <label for="username">Nombre de usuario:</label>
         <input type="text" id="username" name="username" required>
-
+        <br>
         <label for="currentPassword">Contraseña Actual:</label>
         <input type="password" id="currentPassword" name="currentPassword" required>
-
+        <br>
         <label for="newPassword">Contraseña Nueva:</label>
         <input type="password" id="newPassword" name="newPassword" required>
-
+        <br>
         <label for="confirmPassword">Confirmar Contraseña Nueva:</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required>
-
+        <br>
         <button type="submit">Volver</button>
         <button type="submit">Guardar</button>
     </form>

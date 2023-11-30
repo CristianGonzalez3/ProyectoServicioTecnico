@@ -19,7 +19,9 @@ urlpatterns = [
     path('reparaciones_agregar/', views.reparaciones_agregar, name='reparaciones_agregar'),
     path('equipos/', views.equipos, name='equipos'),
     path('componentes/', views.componentes, name='componentes'),
+    path('componentesN/', views.componentesN, name='componentesN'),
     path('solicitudes/', views.solicitudes, name='solicitudes'),
+    path('asignaciones/', views.asignaciones, name='asignaciones'),
     
 
     path('incidentesxequipos/', views.incidentesxequipos_list, name='incidentesxequipos_list'),
