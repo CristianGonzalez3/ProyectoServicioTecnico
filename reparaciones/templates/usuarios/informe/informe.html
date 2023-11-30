@@ -5,7 +5,7 @@
 {% block title %}Página Principal Usuario{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'usuario/css/informe.css' %}">
+    <link rel="stylesheet" href="{% static 'css/usuario/informe.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -27,8 +27,10 @@
             <img class="report-image" src="{% static 'img/pdf.jpeg' %}" alt="Informe 3">
             <button class="download-button">Descargar</button>
         </div>
+        <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_usuario' %}">Volver</a>
+        <button type="button" class="btn btn-primary" href="{% url 'informe' %}">Cancelar</button>
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'usuario/js/informeJ.js' %}"></script>
+    <script src="{% static 'js/usuario/informeJ.js' %}"></script>
 {% endblock %}

@@ -91,7 +91,7 @@
         <div class="botones">
             <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
             <button type="button" class="btn btn-primary" href="{% url 'solicitudes' %}">Cancelar</button>
-            <button type="button" class="btn btn-success">Siguiente</button>
+            <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'asignaciones' %}">Agregar</a>
         </div>
     </div>
 {% endblock %}

@@ -1,0 +1,107 @@
+nav {
+    clear: both;
+    margin-left: 100px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+    nav a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+   }
+    .campo-container{
+    display: flex;
+    align-items: center;
+   }    
+   .logo {
+  width: 300px; 
+  height: auto; 
+ 
+    
+}
+
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .solicitud-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      
+      .solicitud-table th, .solicitud-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      
+      .solicitud-table th {
+        background-color: #f2f2f2;
+      }
+      
+      .solicitud-table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      
+      .solicitud-table tbody tr:hover {
+        background-color: #e1e1e1;
+      }
+      table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    td.numero-solicitud {
+      text-align: center;
+    }
+    th.numero-solicitud {
+      text-align: center;
+    }
+    #miboton{
+        margin-left: 1200px;
+        margin-top: 20px;
+    }
+    h6{
+        margin-left: 84px;
+        margin-top: 40px;
+        font-weight: bold;
+
+    }
+    a.dropdown-item{
+        margin-left: 2500;
+
+    }
+    .corner-buttons {
+        position: absolute;
+        top: 10px;
+        right: 120px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .corner-buttons a {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin-right: 10px;
+        font-size: 24px;
+        text-decoration: none;
+        color: #333;
+    }
+
+   
