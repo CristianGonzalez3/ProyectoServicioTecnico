@@ -72,7 +72,7 @@ def equipos(request):
 
 def componentes(request):
     context = {}
-    return render(request, 'tecnicos/componentes.html', context)
+    return render(request, 'tecnicos/componentes/componentes.html', context)
 
 def solicitudes(request):
     context = {}

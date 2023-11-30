@@ -1,55 +1,25 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuracion</title>
-    <link rel="stylesheet" href="css/configuracionC.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-    <div id="logo-button-container">
-        <div class="logo">
-            <img src="img/everlink.png" alt="Logo">
-        </div>
-        <div class="corner-buttons">
-            <a class="corner-button" href="notificaciones.html">&#128276;</a>
-            <a class="corner-button" href="mensajes.html">&#9993;</a>
-            <a class="corner-button" href="perfil.html">&#128100;</a>
-            <div class="btn-group">
-                <button type="button" class="btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    &#9660;
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="perfil.html">Perfil</a>
-                    <a class="dropdown-item" href="#">Configuracion</a>
-                    <a class="dropdown-item" href="#">Cerrar sesion</a>
-                </div>
-            </div> 
-        </div>
-    </div>
-    <nav>
-        <a href="Tecnico.html">Pagina principal</a>
-        <a href="">Configuracion</a>
-    </nav>
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Configuracion{% endblock %}
+   
+{% block content %}
+    {% include "partials/navbar.html" %}
     <form>
         <label for="username">Nombre de Usuario:</label>
         <input type="text" id="username" name="username" required>
-
+        <br>
         <label for="currentPassword">Contraseña Actual:</label>
         <input type="password" id="currentPassword" name="currentPassword" required>
-
+        <br>
         <label for="newPassword">Contraseña Nueva:</label>
         <input type="password" id="newPassword" name="newPassword" required>
-
+        <br>
         <label for="confirmPassword">Confirmar Contraseña Nueva:</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required>
-
+        <br>
         <button type="submit">Volver</button>
         <button type="submit">Guardar</button>
     </form>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Componentes{% endblock %}
+
+{% block content %}
+    {% include "partials/navbar.html" %}
+    <h2 style="font-weight: bold; font-size: 24px; margin-left: 20px;">Agregar Componentes</h2>
+    <div class="custom-box">
+        <div class="inner-content">
+            <!-- Cuadros de texto TIPO -->
+            <div class="nested-box">
+                TIPO:
+                <select class="editable-textarea" id="tipo">
+                    <option value="nuevo">Nuevo</option>
+                    <option value="existente">Existente</option>
+                </select>
+            </div>
+            <!-- Cuadro de texto CANTIDAD -->
+            <div class="nested-box">
+                CANTIDAD:
+                <textarea class="editable-textarea" placeholder="Cantidad"></textarea>
+            </div>
+            <!-- Cuadro de texto NOMBRE -->
+            <div class="nested-box">
+                NOMBRE:
+                <textarea class="editable-textarea" placeholder="Nombre"></textarea>
+            </div>
+            <!-- Cuadro de texto DESCRIPCION -->
+            <div class="nested-box">
+                DESCRIPCION:
+                <textarea class="editable-textarea" placeholder="Descripción"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="custom-button">Volver</button>
+        <button class="custom-button">Cancelar</button>
+        <button class="custom-button">Guardar</button>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/tecnicos/componentes.js' %}"></script>
+{% endblock %}
