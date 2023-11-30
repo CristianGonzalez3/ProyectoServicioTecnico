@@ -31,7 +31,7 @@ def configuracionusu(request):
 
 def solicitud(request):
     context = {}
-    return render(request, 'usuarios/solicitud/solicitud.html', context)
+    return render(request, 'usuarios/solicitud/solicitudd.html', context)
 
 def reporte(request):
     context = {}
