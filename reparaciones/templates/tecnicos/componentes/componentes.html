@@ -9,15 +9,66 @@
 {% block content %}
     {% include "partials/navbar.html" %}
     <h2 style="font-weight: bold; font-size: 24px; margin-left: 20px;">Componentes</h2>
+    <input type="text" id="inputEliminar" placeholder="Buscar por ID" style="width: 200px;">
+    <a type="button" class="btn btn-success" href="{% url 'componentesN' %}">Buscar</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Componente</th>
+                <th>Fecha de Compra</th>
+                <th>Descripción</th>
+                <th>Stock</th>
+                <th>Seleccionar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Mouse</td>
+                <td>2023-11-13</td>
+                <td>Ratón óptico con cable USB</td>
+                <td>10</td>
+                <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Teclado</td>
+                <td>2023-11-14</td>
+                <td>Teclado mecánico retroiluminado</td>
+                <td>15</td>
+                <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Procesador</td>
+                <td>2023-11-15</td>
+                <td>Procesador Intel Core i7 de novena generación</td>
+                <td>5</td>
+                <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Memoria RAM</td>
+                <td>2023-11-16</td>
+                <td>Memoria RAM DDR4 de 16GB</td>
+                <td>20</td>
+                <td><input type="checkbox" class="seleccionar-checkbox" aria-label="Checkbox for following text input"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+
     </div>
-    <div class="form">
-        <input type="text" id="inputEliminar" placeholder="ID">
+    <div class="form" style="text-align: right;">
         <div >
             <a type="button" class="btn btn-success" href="{% url 'componentesN' %}">Agregar</a>
 
             <button class="btn btn-primary">Eliminar</button>
         </div>
     </div>
+
     <div class="botones">
         <a type="button" class="btn btn-secondary"  href="{% url 'pagina_principal_tecnico' %}">Volver</a>
         <button class="btn btn-secondary">Pedidos</button>
