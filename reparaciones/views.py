@@ -11,6 +11,7 @@ from django.conf import settings
 # Autenticación
 def inicio(request):
     query_set = Group.objects.filter(user = request.user)
+    query_set = Group.objects.filter(user = request.user)
     for g in query_set:
         if g.name == "Tecnico":
             context = {}
@@ -37,11 +38,11 @@ def configuracionusu(request):
 
 def solicitud(request):
     context = {}
-    return render(request, 'usuarios/solicitud/solicitudd.html', context)
+    return render(request, 'usuarios/solicitud/solicitud.html', context)
 
 def reporte(request):
     context = {}
-    return render(request, 'usuarios/seguimiento/reporte.html', context)
+    return render(request, 'usuarios/solicitud/reporte.html', context)
 
 def seguimiento(request):
     context = {}
@@ -50,6 +51,10 @@ def seguimiento(request):
 def informe(request):
     context = {}
     return render(request, 'usuarios/informe/informe.html', context)
+
+def solicitudprimera(request):
+    context = {}
+    return render(request, 'usuarios/solicitud/solicitudprimera.html', context)
 
 @login_required
 def pagina_principal_tecnico(request):

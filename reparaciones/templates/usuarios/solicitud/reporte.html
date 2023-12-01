@@ -5,26 +5,28 @@
 {% block title %}Página Principal Usuario{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'usuario/css/reporte.css' %}">
+    <link rel="stylesheet" href="{% static 'css/usuarios/reporte.css' %}">
 {% endblock %}
 
 {% block content %}
     {% include "partials/navbarusu.html" %}
-    <form action="#" method="post">
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha" required>
-
-        <label for="nombreEquipo">Nombre del Equipo:</label>
-        <input type="text" id="nombreEquipo" name="nombreEquipo" required>
-
-        <label for="descripcion">Descripción del Reporte:</label>
-        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
-
-        <div class="button-container">
-            <button type="button" class="btn btn-secondary" onclick="volver()">Volver</button>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
-    </form>
+    <div class="input">
+        <form action="#" method="post">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+    
+            <label for="nombreEquipo">Nombre del Equipo:</label>
+            <input type="text" id="nombreEquipo" name="nombreEquipo" required>
+    
+            <label for="descripcion">Descripción del Reporte:</label>
+            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+    
+            <div class="button-container">
+                <a type="button" class="btn btn-secondary" href="{% url 'solicitudprimera' %}">Volver</a>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
 {% endblock %}
 
 {% block js %}

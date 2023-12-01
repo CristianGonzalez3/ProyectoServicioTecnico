@@ -5,18 +5,22 @@
 {% block title %}Página Principal Usuario{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/usuario/seguimiento.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones.css' %}">
 {% endblock %}
 
 {% block content %}
     {% include "partials/navbarusu.html" %}
     <form action="#" method="post">
-        <div>
+        <br>
+        <div class="input">
             <label for="Ingresar">Ingresar el ID de seguimiento:</label>
             <input type="Ingresar" type="tex" name="Ingresar" >
-        </div><br>
-        <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_usuario' %}">Volver</a>
-        <button type="reset">Siguiente</button>
+        </div>
+        <br>
+        <div class="botones">
+            <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_usuario' %}">Volver</a>
+            <button type="reset" class="btn btn-success">Siguiente</button>
+        </div>
     </form>
 {% endblock %}
 

@@ -1,4 +1,3 @@
-# En tu archivo reparaciones/forms.py
 from django import forms
 from .models import IncidentesXEquipos
 
