@@ -8,6 +8,7 @@ from django.contrib import messages
 # Autenticación
 def inicio(request):
     query_set = Group.objects.filter(user = request.user)
+    query_set = Group.objects.filter(user = request.user)
     for g in query_set:
         if g.name == "Tecnico":
             context = {}

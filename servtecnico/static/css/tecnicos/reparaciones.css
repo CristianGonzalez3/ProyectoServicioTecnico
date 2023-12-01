@@ -48,6 +48,8 @@ th, td {
 }
 .input{
     text-align: center;
+    font-size: x-large;
+    color: black;
 }
 .botones{
     text-align: right;
@@ -55,4 +57,10 @@ th, td {
 strong{
     color: rgb(0, 0, 0);
     font-style: italic;
+}
+.texto{
+    font-size: x-large;
+}
+.titulo{
+    text-decoration: underline;
 }
