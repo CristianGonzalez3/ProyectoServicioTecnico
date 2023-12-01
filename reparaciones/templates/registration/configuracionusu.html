@@ -3,23 +3,40 @@
 {% load static %}
 
 {% block title %}Configuración|{% endblock %}
-
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones.css' %}">
+{% endblock %}
 {% block content %}
     {% include "partials/navbarusu.html" %}
-    <form>
-        <label for="username">Nombre de usuario:</label>
-        <input type="text" id="username" name="username" required>
+    <br>
+    <form class="input">
         <br>
-        <label for="currentPassword">Contraseña Actual:</label>
-        <input type="password" id="currentPassword" name="currentPassword" required>
+        <div>
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        
         <br>
-        <label for="newPassword">Contraseña Nueva:</label>
-        <input type="password" id="newPassword" name="newPassword" required>
+        <div>
+            <label for="currentPassword">Contraseña Actual:</label>
+            <input type="password" id="currentPassword" name="currentPassword" required>
+        </div>
+        
         <br>
-        <label for="confirmPassword">Confirmar Contraseña Nueva:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <div>
+            <label for="newPassword">Contraseña Nueva:</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+        </div>
+        
         <br>
-        <button type="submit">Volver</button>
-        <button type="submit">Guardar</button>
+        <br>
+        <div>
+            <label for="confirmPassword">Confirmar Contraseña Nueva:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+        
+        <br>
+        <a type="button" class="btn btn-secondary" href="{% url 'pagina_principal_usuario' %}">Volver</a>
+        <button type="submit" class="btn btn-success">Guardar</button>
     </form>
 {% endblock %}
