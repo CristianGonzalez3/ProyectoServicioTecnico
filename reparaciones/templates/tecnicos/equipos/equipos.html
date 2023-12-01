@@ -3,6 +3,9 @@
 {% load static %}
 
 {% block title %}Equipos{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones.css' %}">
+{% endblock %}
 {% block content %}
     {% include "partials/navbar.html" %}
     <div class="container mt-4">
@@ -52,9 +55,10 @@
 
         <!-- Botones adicionales -->
         <div class="botones">
+            <a type="button" class="btn btn-secondary" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
             <button type="button" class="btn btn-primary">Orden de Compra</button>
-            <button type="button" class="btn btn-success" onclick="redirigirAgregar()">Agregar</button>
-            <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
+            <a type="button" class="btn btn-success" href="{% url 'reparaciones_agregar' %}">Agregar</a>
+            
         </div>
     </div>
 {% endblock %}

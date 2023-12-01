@@ -3,11 +3,14 @@
 {% load static %}
 
 {% block title %}Componentes{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones.css' %}">
+{% endblock %}
 
 {% block content %}
     {% include "partials/navbar.html" %}
-    <h6>Solicitudes Asignadas</h6>
-    <table class="solicitud-table">
+    <h6 class="titulo">Solicitudes Asignadas</h6>
+    <table class="table">
         <thead>
           <tr>
             <th class="numero-solicitud">N.° de Solicitud</th>

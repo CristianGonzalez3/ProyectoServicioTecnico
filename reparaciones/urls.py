@@ -10,6 +10,8 @@ urlpatterns = [
     
     path('pagina_principal_usuario/', views.pagina_principal_usuario, name='pagina_principal_usuario'),
     path('solicitud/', views.solicitud, name='solicitud'),
+    path('solicitudprimera/', views.solicitudprimera, name='solicitudprimera'),
+
     path('reporte/', views.reporte, name='reporte'),
     path('seguimiento/', views.seguimiento, name='seguimiento'),
     path('informe/', views.informe, name='informe'),

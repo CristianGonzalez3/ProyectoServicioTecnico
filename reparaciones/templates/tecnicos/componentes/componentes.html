@@ -3,23 +3,25 @@
 {% load static %}
 
 {% block title %}Componentes{% endblock %}
-
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/tecnicos/asignaciones.css' %}">
+{% endblock %}
 {% block content %}
     {% include "partials/navbar.html" %}
     <h2 style="font-weight: bold; font-size: 24px; margin-left: 20px;">Componentes</h2>
     </div>
-    <div class="button-container">
-        <div class="button-column">
-            <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'componentesN' %}">Agregar</a>
+    <div class="form">
+        <input type="text" id="inputEliminar" placeholder="ID">
+        <div >
+            <a type="button" class="btn btn-success" href="{% url 'componentesN' %}">Agregar</a>
 
-            <button class="custom-button color-2" onclick="eliminarCuadro()">Eliminar Cuadro</button>
+            <button class="btn btn-primary">Eliminar</button>
         </div>
-        <input type="text" id="inputEliminar" placeholder="ID a eliminar">
     </div>
-    <div class="button-container">
-        <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
-        <button class="custom-button">Pedidos</button>
-        <button class="custom-button">Orden de Compra</button>
+    <div class="botones">
+        <a type="button" class="btn btn-secondary"  href="{% url 'pagina_principal_tecnico' %}">Volver</a>
+        <button class="btn btn-secondary">Pedidos</button>
+        <button class="btn btn-primary">Orden de Compra</button>
     </div>
 {% endblock %}
 
