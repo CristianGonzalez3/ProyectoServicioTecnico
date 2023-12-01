@@ -12,10 +12,10 @@
     {% include "partials/navbar.html" %}
     <div><br>
       <h1>Detalle de Reparaciones</h1>
-      <p><strong>Descripción:</strong> {{ incidentesxequipo.descripcion_reparacion }}</p>
-      <p><strong>Fecha de Reparación:</strong> {{ incidentesxequipo.fecha_reparacion }}</p>
-      <p><strong>Reporte:</strong> {{ incidentesxequipo.id_incidente }}</p>
-      <p><strong>Equipo:</strong> {{ incidentesxequipo.id_equipo }}</p>
+      <p class="texto"><strong>Descripción:</strong> {{ incidentesxequipo.descripcion_reparacion }}</p>
+      <p class="texto"><strong>Fecha de Reparación:</strong> {{ incidentesxequipo.fecha_reparacion }}</p>
+      <p class="texto"><strong>Reporte:</strong> {{ incidentesxequipo.id_incidente }}</p>
+      <p class="texto"><strong>Equipo:</strong> {{ incidentesxequipo.id_equipo }}</p>
     </div>
     <div style="text-align: right">
       <a type="button" class="btn btn-secondary" href="{% url 'incidentesxequipos_list' %}">Volver</a>    

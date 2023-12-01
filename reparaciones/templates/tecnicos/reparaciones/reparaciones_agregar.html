@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Agregar Reparación{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/tecnicos/asignaciones.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% include "partials/navbar.html" %}
+    <div class="">
+        <form id="miFormulario" onsubmit="guardarYRedirigir(); return false;">
+            <label for="equipo">Nombre del Equipo:</label>
+            <input type="text" id="equipo" name="equipo" placeholder="Nombre del Equipo">
+            <br>
+            <label for="reporte">Nombre del Usuario:</label>
+            <input type="text" id="reporte" name="reporte" placeholder="Usuario">
+            <br>
+            <label for="fechaReporte">Fecha:</label>
+            <input type="date" id="fechaReporte" name="fechaReporte">
+            <br>
+            <label for="descripcionReparacion">Descripción:</label>
+            <input type="text" id="descripcionReparacion" name="descripcionReparacion" placeholder="Descripción de Reparación">
+    
+            <div class="botones">
+                <a type="button" class="btn btn-secondary" href="{% url 'equipos' %}">Volver</a>
+                <button type="button" class="btn btn-primary">Cancelar</button>
+                <button type="submit" class="btn btn-success">Guardar</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/tecnico/reparaciones.js' %}"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

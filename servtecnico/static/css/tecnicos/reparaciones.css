@@ -48,6 +48,8 @@ th, td {
 }
 .input{
     text-align: center;
+    font-size: x-large;
+    color: black;
 }
 .botones{
     text-align: right;
@@ -59,5 +61,10 @@ strong{
 
 
 .form-row {
-    margin-bottom: 20px;
+    margin-bottom: 20px;}
+.texto{
+    font-size: x-large;
+}
+.titulo{
+    font-size: x-large;
 }

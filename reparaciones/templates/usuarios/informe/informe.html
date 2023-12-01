@@ -5,32 +5,33 @@
 {% block title %}Página Principal Usuario{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/usuario/informe.css' %}">
+    <link rel="stylesheet" href="{% static 'css/usuarios/pagina_principal_usuario.css' %}">
 {% endblock %}
 
 {% block content %}
     {% include "partials/navbarusu.html" %}
-    <div class="report-container">
+    <div class="button-container-wrapper" style="display: flex; justify-content: space-around;">
         <div class="card">
             <div class="report-title"></div>
-            <img class="report-image" src="{% static 'img/pdf.jpeg' %}" alt="Informe 1">
+            <img class="report-image" src="{% static 'img/usuarios/pdf.jpeg' %}" alt="Informe 1">
             <button class="download-button">Descargar</button>
         </div>
         <div class="card">
             <div class="report-title"></div>
-            <img class="report-image" src="{% static 'img/pdf.jpeg' %}" alt="Informe 2">
+            <img class="report-image" src="{% static 'img/usuarios/pdf.jpeg' %}" alt="Informe 2">
             <button class="download-button">Descargar</button>
         </div>
         
         <div class="card">
-            <div class="report-title"></div>
-            <img class="report-image" src="{% static 'img/pdf.jpeg' %}" alt="Informe 3">
+            <div></div>
+            <img class="report-image" src="{% static 'img/usuarios/pdf.jpeg' %}" alt="Informe 3">
             <button class="download-button">Descargar</button>
         </div>
+    </div>
         <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_usuario' %}">Volver</a>
         <button type="button" class="btn btn-primary" href="{% url 'informe' %}">Cancelar</button>
 {% endblock %}
 
 {% block js %}
-    <script src="{% static 'js/usuario/informeJ.js' %}"></script>
+    <script src="{% static 'js/usuarios/informeJ.js' %}"></script>
 {% endblock %}

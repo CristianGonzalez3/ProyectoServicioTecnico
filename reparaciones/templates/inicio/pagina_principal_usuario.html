@@ -5,7 +5,7 @@
 {% block title %}Página Principal Usuario{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'usuario/css/pagina_principal_usuario.css' %}">
+    <link rel="stylesheet" href="{% static 'css/usuarios/pagina_principal_usuario.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -19,8 +19,8 @@
             <div class="card">
                 <div class="card-body">
                     <button class="btn btn-primary" onclick="mostrarSolicitud()">
-                        <a href="{% url 'solicitud' %}">
-                        <img src="{% static 'img/solicitud.png' %}" alt="Solicitud">
+                        <a href="{% url 'solicitudprimera' %}">
+                        <img src="{% static 'img/usuarios/solicitud.png' %}" alt="Solicitud">
                         <h3>Solicitud</h3>
                         </a>
                     </button>
@@ -33,7 +33,7 @@
                 <div class="card-body">
                     <button class="btn btn-primary" onclick="mostrarSeguimiento()">
                         <a href="{% url 'seguimiento' %}">
-                        <img src="{% static 'usuario/img/seguimiento.png' %}" alt="Solicitud">
+                        <img src="{% static 'img/usuarios/seguimiento.png' %}" alt="Solicitud">
                         <h3>Seguimiento</h3>
                         </a>
                     </button>
@@ -46,7 +46,7 @@
                 <div class="card-body">
                     <button class="btn btn-primary" onclick="mostrarInforme()">
                         <a href="{% url 'informe' %}">
-                            <img src="{% static 'img/informe.jpg' %}" alt="Informe">
+                            <img src="{% static 'img/usuarios/informe.jpg' %}" alt="Informe">
                             <h3>Informe</h3>
                             </a>
                     </button>

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Página Principal Usuario{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/usuarios/solicitud.css' %}">
+{% endblock %}
+
+{% block content %}
+    {% include "partials/navbarusu.html" %}
+    <br>
+    <div class="button-container-wrapper" style="display: flex; justify-content: space-around;">
+        <section id="arriba">
+        </section>
+        
+        <section >
+            <div class="card">
+                <div class="card-body">
+                    <img src="{% static 'img/usuarios/pdf.jpeg' %}" class="pdf-image">
+                    <h2>Solicitud N°22456</h2>
+                    <p>Fecha: 23/10/23</p>
+                    <p>Estado: Aprobado</p>
+                    <a type="button" class="btn btn-primary" href="{% url 'reporte' %}">Reporte</a>      
+                    <div id="formulario-container1"></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="card">
+                <div class="card-body">
+                    <img src="{% static 'img/usuarios/pdf.jpeg' %}" class="pdf-image">
+                    <h2>Solicitud N°40678</h2>
+                    <p>Fecha: 06/11/23</p>
+                    <p>Estado: En Espera</p>
+                    <a type="button" class="btn btn-primary" href="{% url 'reporte' %}">Reporte</a>      
+                    <div id="formulario-container2"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <br>
+        <div class="text-center">
+        <a type="button" class="btn btn-secondary" href="{% url 'pagina_principal_usuario' %}">Volver</a>
+        <a type="button" class="btn btn-success" href="{% url 'solicitud' %}">Solicitud</a>
+
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/usuario/solicitudJ.js' %}"></script>
+{% endblock %}
+
