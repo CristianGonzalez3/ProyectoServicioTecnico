@@ -5,33 +5,68 @@
 {% block title %}Página Principal Usuario{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/usuarios/pagina_principal_usuario.css' %}">
+    <link rel="stylesheet" href="{% static 'css/usuarios/informe/informe.css' %}">
 {% endblock %}
 
 {% block content %}
     {% include "partials/navbarusu.html" %}
-    <div class="button-container-wrapper" style="display: flex; justify-content: space-around;">
-        <div class="card">
-            <div class="report-title"></div>
+    <div class="report-container">
+        <div class="report">
+            <div class="report-title">Título del Informe 1</div>
+            <div class="report-date">Fecha: 01/12/2023</div>
             <img class="report-image" src="{% static 'img/usuarios/pdf.jpeg' %}" alt="Informe 1">
             <button class="download-button">Descargar</button>
         </div>
-        <div class="card">
-            <div class="report-title"></div>
+    
+        <div class="report">
+            <div class="report-title">Título del Informe 2</div>
+            <div class="report-date">Fecha: 02/12/2023</div>
             <img class="report-image" src="{% static 'img/usuarios/pdf.jpeg' %}" alt="Informe 2">
             <button class="download-button">Descargar</button>
         </div>
-        
-        <div class="card">
-            <div></div>
-            <img class="report-image" src="{% static 'img/usuarios/pdf.jpeg' %}" alt="Informe 3">
+
+        <div class="report">
+            <div class="report-title">Título del Informe 3</div>
+            <div class="report-date">Fecha: 01/12/2023</div>
+            <img class="report-image" src="{% static 'img/usuarios/pdf.jpeg' %}" alt="Informe 1">
+            <button class="download-button">Descargar</button>
+        </div>
+    
+        <div class="report">
+            <div class="report-title">Título del Informe 4</div>
+            <div class="report-date">Fecha: 01/12/2023</div>
+            <img class="report-image" src="{% static 'img/usuarios/pdf.jpeg' %}" alt="Informe 1">
             <button class="download-button">Descargar</button>
         </div>
     </div>
+    <div class="botoncito">
         <a type="button" class="btn btn-secondary" onclick="volver()" href="{% url 'pagina_principal_usuario' %}">Volver</a>
-        <button type="button" class="btn btn-primary" href="{% url 'informe' %}">Cancelar</button>
+    </div>
+        
 {% endblock %}
 
 {% block js %}
     <script src="{% static 'js/usuarios/informeJ.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Obtén el número de informes
+            var numberOfReports = $('.report-container .report').length;
+
+            // Establece el límite para mostrar la barra de desplazamiento
+            var limitToShowScrollbar = 3;
+
+            // Verifica si se supera el límite
+            if (numberOfReports > limitToShowScrollbar) {
+                // Agrega la clase que mostrará la barra de desplazamiento
+                $('#report-container').addClass('scrollable-reports');
+            }
+        });
+    </script>
 {% endblock %}
+
+
+    
+ 
