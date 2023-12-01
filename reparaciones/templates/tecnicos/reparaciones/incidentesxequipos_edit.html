@@ -17,10 +17,10 @@
     <button class="btn btn-success" type="submit">Guardar cambios</button>
   </form>
   {% if incidentesxequipo.pk %}
-    <a href="{% url 'incidentesxequipos_detail' pk=incidentesxequipo.pk %}" >Cancelar</a>
+    <a href="{% url 'incidentesxequipos_detail' pk=incidentesxequipo.pk %}" >Volver</a>
   {% else %}
   <br>
-    <a href="{% url 'incidentesxequipos_list' %}" class="btn btn-secondary">Cancelar</a>
+    <a href="{% url 'incidentesxequipos_list' %}" class="btn btn-secondary">Volver</a>
   {% endif %}
   
 {% endblock %}

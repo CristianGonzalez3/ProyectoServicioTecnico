@@ -5,6 +5,8 @@ from .models import IncidentesXEquipos
 from .forms import IncidentesXEquiposForm
 from django.contrib import messages
 
+
+
 # Autenticación
 def inicio(request):
     query_set = Group.objects.filter(user = request.user)
