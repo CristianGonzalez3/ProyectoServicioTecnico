@@ -3,23 +3,30 @@
 {% load static %}
 
 {% block title %}Configuracion{% endblock %}
-   
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones.css' %}">
+{% endblock %}
 {% block content %}
     {% include "partials/navbar.html" %}
-    <form>
+    <br>
+    <form class="input">
         <label for="username">Nombre de Usuario:</label>
         <input type="text" id="username" name="username" required>
+        <br>
         <br>
         <label for="currentPassword">Contraseña Actual:</label>
         <input type="password" id="currentPassword" name="currentPassword" required>
         <br>
+        <br>
         <label for="newPassword">Contraseña Nueva:</label>
         <input type="password" id="newPassword" name="newPassword" required>
         <br>
-        <label for="confirmPassword">Confirmar Contraseña Nueva:</label>
+        <br>
+        <label for="confirmPassword" >Confirmar Contraseña Nueva:</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required>
         <br>
-        <button type="submit">Volver</button>
-        <button type="submit">Guardar</button>
+        <br>
+        <a type="button" class="btn btn-secondary" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
+        <button type="submit" class="btn btn-success">Guardar</button>
     </form>
 {% endblock %}

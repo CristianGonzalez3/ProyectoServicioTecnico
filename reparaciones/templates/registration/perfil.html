@@ -5,38 +5,40 @@
 {% block title %}Perfil{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'tecnico/css/pagina_principal_tecnico.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones.css' %}">
 {% endblock %}
 
 {% block content %}
     {% include "partials/navbar.html" %}
-    <form id="formulario">
-        <div class="campo-container">
+    <br>
+    <form class="input">
+        <div>
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-            <button type="button" onclick="agregarCampo('nombre')">Agregar Nombre</button>
+            <input type="text"  id="nombre" name="nombre" required>
+            <button type="button" class="btn btn-primary" onclick="agregarCampo('nombre')">Agregar Nombre</button>
         </div>
         <br>
-        <div class="campo-container">
+        <div >
             <label for="apellido">Apellido:</label>
             <input type="text" id="apellido" name="apellido" required>
-            <button type="button" onclick="agregarCampo('apellido')"> Agregar Apellido</button>
+            <button type="button" class="btn btn-primary" onclick="agregarCampo('apellido')"> Agregar Apellido</button>
         </div>
         <br>
-        <div class="campo-container">
+        <div >
             <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" name="telefono" required>
-            <button type="button" onclick="agregarCampo('telefono')"> Agregar Teléfono</button>
+            <button type="button" class="btn btn-primary" onclick="agregarCampo('telefono')"> Agregar Teléfono</button>
         </div>
         <br>
-        <div class="campo-container">
+        <div >
             <label for="correo">Correo electronico:</label>
             <input type="email" id="correo" name="correo" required>
-            <button type="button" onclick="agregarCampo('correo electronico')"> Agregar Correo</button>
+            <button type="button"class="btn btn-primary" onclick="agregarCampo('correo electronico')"> Agregar Correo</button>
         </div>
         <br>
-        <button type="button" onclick="guardarContacto()">Guardar</button>
-        <button type="button" onclick="volver()">Volver</button>
+        <button type="button" class="btn btn-success" onclick="guardarContacto()">Guardar</button>
+        <a type="button" class="btn btn-secondary" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
+
     </form>
 
 {% endblock %}
