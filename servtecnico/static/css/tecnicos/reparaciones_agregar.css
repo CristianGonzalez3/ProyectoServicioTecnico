@@ -1,0 +1,143 @@
+/* reparaciones_agregar.css */
+
+/* Estilo para el formulario */
+.incidentesxequipo-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Estilo para las etiquetas del formulario */
+.incidentesxequipo-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Estilo para los campos de entrada del formulario */
+.incidentesxequipo-form input[type="text"],
+.incidentesxequipo-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+/* Estilo para el botón del formulario */
+.incidentesxequipo-form button {
+    color: white;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: right;
+}
+
+/* reparaciones_agregar.css */
+
+.incidentesxequipo-form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    width: calc(100% - 18px);
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+#id_fecha_reparacion {
+    width: calc(50% - 28px);
+    display: inline-block;
+}
+
+.calendar-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+.calendar-button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el calendario */
+.ui-datepicker {
+    font-size: 14px;
+    position: absolute;
+    z-index: 1000;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ui-datepicker-header {
+    background-color: #f2f2f2;
+    color: #333;
+    border: none;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.ui-datepicker-title {
+    color: #333;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    background-color: #f2f2f2;
+    border: none;
+    padding: 3px;
+    margin: 0;
+}
+
+.ui-datepicker-prev:hover, .ui-datepicker-next:hover {
+    background-color: #ddd;
+}
+
+.ui-datepicker-calendar {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.ui-datepicker-calendar th, .ui-datepicker-calendar td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.ui-datepicker-calendar td {
+    cursor: pointer;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+    background-color: #fff;
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+    background-color: #f2f2f2;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+    background-color: #4caf50;
+    color: white;
+}

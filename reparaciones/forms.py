@@ -7,3 +7,7 @@ class IncidentesXEquiposForm(forms.ModelForm):
         model = IncidentesXEquipos
         fields = ['id_equipo','id_incidente','fecha_reparacion','descripcion_reparacion']
         
+    fecha_reparacion = forms.DateField(
+        widget=forms.DateInput(attrs={'class': 'datepicker'}),
+        input_formats=['%Y-%m-%d', '%d/%m/%Y', '%d/%m/%y']
+    )

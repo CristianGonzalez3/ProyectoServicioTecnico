@@ -5,27 +5,62 @@
 {% block title %}Agregar Reparación{% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'tecnico/css/reparaciones_agregar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones_agregar.css' %}">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 {% endblock %}
 
 {% block content %}
     {% include "partials/navbar.html" %}
     <br>
     <h1>Reparaciones</h1>
-  <form method="post" class="incidentesxequipo-form">{% csrf_token %}
-    {{ form.as_p}}
-    <button class="btn btn-success" type="submit">Guardar cambios</button>
-  </form>
-  {% if incidentesxequipo.pk %}
-    <a href="{% url 'incidentesxequipos_detail' pk=incidentesxequipo.pk %}" >Volver</a>
-  {% else %}
-  <br>
-    <a href="{% url 'incidentesxequipos_list' %}" class="btn btn-secondary">Volver</a>
-  {% endif %}
-  
+
+    <form method="post" class="incidentesxequipo-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="{{ form.id_equipo.id_for_label }}">Equipo:</label>
+          {{ form.id_equipo }}
+        </div>
+
+        <div class="form-group">
+          <label for="{{ form.id_incidente.id_for_label }}">Reporte:</label>
+          {{ form.id_incidente }}
+        </div>
+        
+        <div class="form-group">
+          <label for="{{ form.fecha_reparacion.id_for_label }}">Fecha de Reparación:</label>
+          <div style="position: relative;">
+            {{ form.fecha_reparacion }}
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.descripcion_reparacion.id_for_label }}">Descripción:</label>
+            {{ form.descripcion_reparacion }}
+        </div><br>
+
+        <div style="text-align: right">
+          <a href="{% url 'incidentesxequipos_list' %}" class="btn btn-secondary">Volver</a>
+          <button class="btn btn-success" type="submit">Guardar cambios</button>
+        </div>
+    </form>
+
 {% endblock %}
 
 {% block js %}
     <script src="{% static 'tecnico/js/pagina_principal_tecnico.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#id_fecha_reparacion").datepicker({
+                dateFormat: "yy-mm-dd",
+                showOn: "both",
+                buttonText: "&#x1F4C5;",
+                buttonImageOnly: false,
+                buttonImage: null,
+                minDate: 0
+            });
+        });
+    </script>
 {% endblock %}
-

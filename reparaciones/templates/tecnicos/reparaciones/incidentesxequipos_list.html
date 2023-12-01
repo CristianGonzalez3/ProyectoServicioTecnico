@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block title %}Reparaciones{% endblock %}
 
 {% block css %}
@@ -15,6 +16,7 @@
       {% csrf_token %}
       <div class="table-container">
         <table class="table">
+          <!-- Encabezados de la tabla -->
           <thead class="input">
             <tr>
               <th>ID</th>
@@ -28,7 +30,7 @@
           </thead>
           <tbody>
             {% for incidentesxequipo in incidentesxequipos %}
-              <tr>
+              <tr class="table-row">
                 <td>{{ incidentesxequipo.pk }}</td>
                 <td>{{ incidentesxequipo.id_equipo }}</td>
                 <td>{{ incidentesxequipo.id_incidente }}</td>
@@ -48,14 +50,13 @@
         </table>
       </div><br>
       <div class="botones">
-        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#confirmacionModal">Eliminar</button>
-        <a type="button" class="btn btn-success" href="{% url 'incidentesxequipos_new' %}">Agregar</a>
         <a type="button" class="btn btn-secondary" href="{% url 'pagina_principal_tecnico' %}">Volver</a>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmacionModal">Eliminar</button>
+        <a type="button" class="btn btn-success" href="{% url 'incidentesxequipos_new' %}">Agregar</a>
       </div>
     </form>
   </div>
 
-  <!-- Modal de Confirmación -->
   <div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog" aria-labelledby="confirmacionModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -90,9 +91,7 @@
       });
     });
 
-    // Función para cerrar el modal después de eliminar
     function eliminarIncidentes() {
-      // Aquí puedes realizar la acción de eliminar, ya sea haciendo una petición AJAX o enviando el formulario
       $('#eliminarForm').submit();
       $('#confirmacionModal').modal('hide');
     }

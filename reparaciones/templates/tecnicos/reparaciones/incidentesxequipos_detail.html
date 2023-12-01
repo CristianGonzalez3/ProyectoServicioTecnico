@@ -15,23 +15,20 @@
       <p><strong>Descripción:</strong> {{ incidentesxequipo.descripcion_reparacion }}</p>
       <p><strong>Fecha de Reparación:</strong> {{ incidentesxequipo.fecha_reparacion }}</p>
       <p><strong>Reporte:</strong> {{ incidentesxequipo.id_incidente }}</p>
-      <p><strong>Detalle de Equipo:</strong> {{ incidentesxequipo.id_equipo }}</p>
+      <p><strong>Equipo:</strong> {{ incidentesxequipo.id_equipo }}</p>
     </div>
-    <div >
+    <div style="text-align: right">
       <a type="button" class="btn btn-secondary" href="{% url 'incidentesxequipos_list' %}">Volver</a>    
-      <a class="btn btn-success" href="{% url 'incidentesxequipos_edit' pk=incidentesxequipo.pk %}">Modificar</a>   
+      <a class="btn btn-success" href="{% url 'incidentesxequipos_edit' pk=incidentesxequipo.pk %}" >Modificar</a>   
     </div>
     <br>
-    <div class="input">
+    <div class="input" style="text-align: left;">
       <label for="lastName" >Nombre del Usuario:</label>
       <input type="text" id="lastName" name="lastName" placeholder="Nombre del Usuario"> 
-  
       <label for="lastName">Correo:</label>
       <input type="text" id="lastName" name="lastName" placeholder="Correo">
       <button type="button" class="btn btn-success" onclick="enviarDatos()">Enviar</button>
   </div>
-
-
 {% endblock %}
 
 {% block js %}

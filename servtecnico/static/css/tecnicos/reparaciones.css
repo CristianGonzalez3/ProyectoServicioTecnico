@@ -56,3 +56,8 @@ strong{
     color: rgb(0, 0, 0);
     font-style: italic;
 }
+
+
+.form-row {
+    margin-bottom: 20px;
+}
