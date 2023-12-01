@@ -11,3 +11,6 @@ class IncidentesXEquiposForm(forms.ModelForm):
         widget=forms.DateInput(attrs={'class': 'datepicker'}),
         input_formats=['%Y-%m-%d', '%d/%m/%Y', '%d/%m/%y']
     )
+
+class CorreoForm(forms.Form):
+    correo_destino = forms.EmailField(label='Correo Electrónico Destino')

@@ -4,7 +4,8 @@ from django.contrib.auth.models import Group
 from .models import IncidentesXEquipos
 from .forms import IncidentesXEquiposForm
 from django.contrib import messages
-
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 # Autenticación
@@ -136,3 +137,39 @@ def eliminar_varios_incidentes(request):
             messages.warning(request, 'Selecciona al menos un incidente para eliminar.')
 
     return redirect('incidentesxequipos_list')
+
+
+def enviar_detalle_por_correo(request, pk, correo_destino):
+    incidentesxequipo = get_object_or_404(IncidentesXEquipos, pk=pk)
+
+    contenido_html = f"""
+        <div>
+            <h1>Detalle de Reparaciones</h1>
+            <p><strong>Descripción:</strong> {incidentesxequipo.descripcion_reparacion}</p>
+            <p><strong>Fecha de Reparación:</strong> {incidentesxequipo.fecha_reparacion}</p>
+            <p><strong>Reporte:</strong> {incidentesxequipo.id_incidente}</p>
+            <p><strong>Equipo:</strong> {incidentesxequipo.id_equipo}</p>
+        </div>
+    """
+
+    asunto = 'Detalle de Reparación'
+    mensaje = 'Se adjunta el detalle de la reparación en formato HTML.'
+
+    # Dirección de correo electrónico desde la cual enviar
+    correo_desde = settings.EMAIL_HOST_USER
+
+    try:
+        # Envía el correo con el contenido HTML
+        send_mail(asunto, mensaje, correo_desde, [correo_destino], html_message=contenido_html)
+        mensaje_respuesta = f'Correo enviado exitosamente a {correo_destino}.'
+
+        # Agrega un mensaje de éxito para mostrar en la página
+        messages.success(request, mensaje_respuesta)
+
+        # Redirige a la página de detalles del incidente
+        return redirect('incidentesxequipos_detail', pk=pk)
+    except Exception as e:
+        # Manejar errores
+        mensaje_respuesta = f'Error al enviar el correo a {correo_destino}: {str(e)}'
+        messages.error(request, mensaje_respuesta)
+        return redirect('incidentesxequipos_detail', pk=pk)

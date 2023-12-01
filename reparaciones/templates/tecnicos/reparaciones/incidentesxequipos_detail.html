@@ -6,33 +6,49 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/tecnicos/reparaciones.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 {% endblock %}
 
 {% block content %}
     {% include "partials/navbar.html" %}
-    <div><br>
-      <h1>Detalle de Reparaciones</h1>
-      <p><strong>Descripción:</strong> {{ incidentesxequipo.descripcion_reparacion }}</p>
-      <p><strong>Fecha de Reparación:</strong> {{ incidentesxequipo.fecha_reparacion }}</p>
-      <p><strong>Reporte:</strong> {{ incidentesxequipo.id_incidente }}</p>
-      <p><strong>Equipo:</strong> {{ incidentesxequipo.id_equipo }}</p>
+    <div class="container"><br>
+        <h1>Detalle de Reparaciones</h1>
+        <p><strong>Descripción:</strong> {{ incidentesxequipo.descripcion_reparacion }}</p>
+        <p><strong>Fecha de Reparación:</strong> {{ incidentesxequipo.fecha_reparacion }}</p>
+        <p><strong>Reporte:</strong> {{ incidentesxequipo.id_incidente }}</p>
+        <p><strong>Equipo:</strong> {{ incidentesxequipo.id_equipo }}</p>
     </div>
-    <div style="text-align: right">
-      <a type="button" class="btn btn-secondary" href="{% url 'incidentesxequipos_list' %}">Volver</a>    
-      <a class="btn btn-success" href="{% url 'incidentesxequipos_edit' pk=incidentesxequipo.pk %}" >Modificar</a>   
+    <div class="container" style="text-align: right; margin-top: 20px;">
+        <a type="button" class="btn btn-secondary" href="{% url 'incidentesxequipos_list' %}">Volver</a>    
+        <a class="btn btn-success" href="{% url 'incidentesxequipos_edit' pk=incidentesxequipo.pk %}" >Modificar</a>   
     </div>
     <br>
-    <div class="input" style="text-align: left;">
-      <label for="lastName" >Nombre del Usuario:</label>
-      <input type="text" id="lastName" name="lastName" placeholder="Nombre del Usuario"> 
-      <label for="lastName">Correo:</label>
-      <input type="text" id="lastName" name="lastName" placeholder="Correo">
-      <button type="button" class="btn btn-success" onclick="enviarDatos()">Enviar</button>
-  </div>
+    <div class="container" style="text-align: left; margin-top: 20px;">
+        <label for="lastName">Nombre del Usuario:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Nombre del Usuario"> 
+        <form method="post" style="display: inline;">
+            {% csrf_token %}
+            <label for="correo_destino">Correo Electrónico:</label>
+            <input type="text" id="correo_destino" name="correo_destino" placeholder="Correo Electrónico">
+            <button type="submit" class="btn btn-success" formaction="{% url 'enviar_detalle_por_correo' pk=incidentesxequipo.pk correo_destino='cristiang0212@gmail.com' %}">Enviar</button>
+        </form>
+    </div>
+    <div class="container alert-container" style="margin-top: 20px;">
+        {% if messages %}
+            <div class="alert alert-info" role="alert">
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}
 
 {% block js %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="{% static 'tecnico/js/pagina_principal_tecnico.js' %}"></script>
 {% endblock %}
-
-

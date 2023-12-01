@@ -29,4 +29,6 @@ urlpatterns = [
     path('incidentesxequipos/new/', views.incidentesxequipos_new, name='incidentesxequipos_new'),
     path('incidentesxequipos/<int:pk>/edit/', views.incidentesxequipos_edit, name='incidentesxequipos_edit'),
     path('eliminar_varios_incidentes/', views.eliminar_varios_incidentes, name='eliminar_varios_incidentes'),
+
+    path('enviar_detalle/<int:pk>/<str:correo_destino>/', views.enviar_detalle_por_correo, name='enviar_detalle_por_correo'),
 ]
